@@ -5,49 +5,135 @@
     </head>
 
     <body>
+
         <header>
-           <h1>Charlie's Website</h1>
-           <style>
-            body {
-                 background-color: lightcyan;
-            }   
-
-            h1 {
-                text-align: center;
-            }
-
-            p {
-                font-family: verdana;
-                font-size: 15px;
-            }
-
-            #home{
-                text-align: center;
-            }
-           </style>
+            <h1>Group Assignment CSS - Charlie Grozier</h1>
         </header>
-        <nav id="home">
+        
+        <nav>
             <a href="index.html">Home</a><br>
+
         </nav>
-        <article>
-            <header>
-                <h2>Exploring Computer Science</h2>
-            </header>
+        
+        <style>
+            /* colors - background */
+            body {
+                background-color: #f4f4f9;
+            }
+
+            /* colors - text */
+            h1 {
+                color: #4CAF50; 
+            }
+            p {
+                color: #333; 
+            }
+
+            /* colors - border */
+            div {
+                border-color: #4CAF50; 
+            }
+
+            /* background - color */
+            header {
+                background-color: lightcyan; 
+                padding: 10px;
+            }
+
+            /* background - image */
+            section {
+                background-image: url("Headshot.jpeg"); 
+                background-size: cover;
+                color: white;
+                padding: 20px;
+            }
+
+            /* background - repeat */
+            .repeat-background {
+                background-image: url("Headshot.jpeg");
+                background-repeat: repeat;
+            }
+
+            /* background - attached */
+            .attached-background {
+                background-image: url("Headshot.jpeg"); 
+                background-attachment: fixed;
+                background-size: cover;
+                color: white;
+                padding: 20px;
+            }
+
+            /* borders - style */
+            section, footer {
+                border-style: solid; 
+            }
+
+            /* borders - width */
+            header {
+                border-width: 5px; 
+            }
+
+            /* borders - color */
+            nav {
+                border-color: #ff6347; 
+                border-width: 2px;
+                border-style: dashed; 
+            }
+
+            /* borders - sides */
+            div {
+                border-left: 3px solid #0000ff;
+                border-top: 3px solid #0000ff; 
+            }
+
+            /* borders - rounded */
+            footer {
+                border-radius: 10px; 
+                background-color: #333;
+                color: white;
+                padding: 10px;
+            }
+
+            /* margins */
+            header {
+                margin-bottom: 20px; 
+            }
+
+            /* padding */
+            section {
+                padding: 30px; 
+            }
+
+            /* height */
+            div {
+                height: 200px; 
+                margin: 10px 0;
+            }
+
+            /* width */
+            nav a {
+                width: 200px; 
+                display: inline-block;
+                text-align: center;
+                padding: 10px;
+                margin: 5px 0;
+                text-decoration: none;
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 5px;
+            }
+        </style>
+
+        <div id="main-content">
             <section>
-                <header>
-                    <h3>The Evolution of Computing</h3>
-                </header>
-                <p>Computers have evolved from large, room-sized machines to compact and powerful devices that fit in our pockets. The journey from vacuum tubes to modern processors is a testament to human ingenuity.</p>
+                <h2>Charlie's Website</h2>
+                <p>This page shows off CSS styles from W3schools</p>
             </section>
-            <section>
-                <header>
-                    <h3>Programming Languages</h3>
-                </header>
-                <p>From assembly language to high-level scripting languages, programming has significantly transformed how we interact with machines. Python, C++, and Java remain among the most widely used languages today.</p>
-            </section>
+            
             <footer>
-                <p>Published on January 18, 2025</p>
+                <p>&copy; 2025 CPSC 3750 - All Rights Reserved</p>
             </footer>
-        </article>
+        </div>
+
     </body>
 </html>
