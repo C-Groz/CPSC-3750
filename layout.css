@@ -1,0 +1,104 @@
+body {
+  margin:0;
+  padding:0;
+  min-width: 525px;
+}
+
+header {
+  float: left;
+  width: 100%;
+}
+
+footer {
+  position:relative;
+  float: left;
+  width: 100%;
+  background-color: #cccccc;
+  text-align:center;
+  font-style: italic;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#wrapper {
+  float: left;
+  padding-left: 200px;
+  padding-right: 125px;
+  overflow: hidden;
+}
+
+#left_side {
+  position: relative;
+  float: left;
+  width: 200px;
+  background-color: rgb(245, 102, 0);
+  right: 200px;
+  margin-left: -100%;
+  margin-bottom: -2000px;
+  padding-bottom: 2000px;
+}
+
+#right_side {
+  position: relative;
+  float: left;
+  width: 125px;
+  background-color: rgb(82, 45, 128);
+  margin-right: -125px;
+  margin-bottom: -2000px;
+  padding-bottom: 2000px;
+  padding-top: 10px;
+}
+
+#content_area {
+  position: relative;
+  float: left;
+  background-color: #ffffff;
+  width: 100%;
+  margin-bottom: -2000px;
+  padding-bottom: 2000px;
+  padding-top: 5px;
+}
+
+#content_area h1{
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+#content_area p{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+#left_side ul {
+  list-style: none;
+  margin: 12px 0px 0px 12px;
+  padding: 0px;
+}
+
+#left_side li a:link, #nav li a:visited {
+  font-size: 12pt;
+  font-weight: bold;
+  padding: 3px 0px 3px 3px;
+  color: #000000;
+  text-decoration: none;
+  display: block;
+}
+
+#left_side li a:hover, #nav li a:active {
+  font-size: 12pt; 
+  font-weight: bold;
+  padding: 3px 0px 3px 3px;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+#right_side p{
+  padding-left: 10px;
+  padding-right: 10px;
+}
