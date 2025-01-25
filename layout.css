@@ -22,17 +22,17 @@ footer {
 
 #wrapper {
   float: left;
-  padding-left: 200px;
-  padding-right: 125px;
+  padding-left: 20vw;
+  padding-right: 10vw;
   overflow: hidden;
 }
 
 #left_side {
   position: relative;
   float: left;
-  width: 200px;
+  width: 20vw;
   background-color: rgb(245, 102, 0);
-  right: 200px;
+  right: 20vw;
   margin-left: -100%;
   margin-bottom: -2000px;
   padding-bottom: 2000px;
@@ -41,9 +41,9 @@ footer {
 #right_side {
   position: relative;
   float: left;
-  width: 125px;
+  width: 10vw;
   background-color: rgb(82, 45, 128);
-  margin-right: -125px;
+  margin-right: -10vw;
   margin-bottom: -2000px;
   padding-bottom: 2000px;
   padding-top: 10px;
@@ -60,14 +60,14 @@ footer {
 }
 
 #content_area h1{
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 10vw;
+  padding-right: 10vw;
   text-align: center;
 }
 
 #content_area p{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 
 h1 {
