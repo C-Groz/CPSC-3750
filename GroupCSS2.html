@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CPSC 3750 Website</title>
+        <link rel="stylesheet" type="text/css" href="GroupCSS2.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <body style="background-color:lightcyan"></body>
+    </head>
+
+    <script>
+        fetch("navbar.html")
+          .then(response => response.text())
+          .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    </script> 
+    <body>
+        <h1 id="header">Group CSS Assignment 2 - Charlie Grozier</h1>
+        <div id="container">
+            <div id="box">
+                <p>Box Model</p>
+            </div>
+
+            <div id="icons">
+                <p>Icons:</p>
+                <i class="glyphicon glyphicon-thumbs-up"></i>
+                <i class="glyphicon glyphicon-envelope"></i>
+            </div>
+        
+            <div id="lists">
+                <h1>Classes I'm Taking This Semester:</h1>
+                <ul id="unordered">
+                    <li>CPSC 3600</li>
+                    <li>CPSC 3720</li>
+                    <li>CPSC 3750</li>
+                    <li>CPSC 4140</li>
+                    <li>GEOL 1200</li>
+                </ul>
+                <h1>Classes I Took Last Semester:</h1>
+                <ol id="ordered">
+                    <li>Data Science</li>
+                    <li>Operating Systems</li>
+                    <li>Programming Systems</li>
+                    <li>Public Speaking</li>
+                    <li>Theater Appreciation</li>
+                </ol>
+            </div>
+            <div id="unresponsive_table">
+                <h1>Unresponsive Table</h1>
+                <table>
+                    <tr>
+                      <th>Class</th>
+                      <th>Time</th>
+                    </tr>
+                    <tr>
+                      <td>CPSC 3750</td>
+                      <td>2pm</td>
+                    </tr>
+                    <tr>
+                      <td>CPSC 3600</td>
+                      <td>8am</td>
+                    </tr>
+                  </table>
+            </div>
+
+            <div style="overflow-x: auto;" id="responsive_table">
+                <h1>Responsive Table</h1>
+                <table>
+                    <tr>
+                      <th>Class</th>
+                      <th>Time</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                      <th>Credits</th>
+                    </tr>
+                    <tr>
+                      <td>CPSC 3750</td>
+                      <td>2pm</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>CPSC 3600</td>
+                      <td>8am</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                    </tr>
+                  </table>
+            </div>
+            <div id="img_gallery">
+                <a target="_blank" href="mcadams.jpeg">
+                <img src="mcadams.jpeg" alt="mcadams" width="400" height="300">
+                </a>
+                <div class="desc">This is Mcadams Hall, where I take CPSC 4140</div>
+            </div>
+          
+            <div id="img_gallery">
+                <a target="_blank" href="academic_s_s.jpeg">
+                <img src="academic_s_s.jpeg" alt="academic_s_s" width="400" height="300">
+                </a>
+                <div class="desc">This is the Academic Success Center, where I take CPSC 3750</div>
+            </div>
+          
+            <div id="img_gallery">
+                <a target="_blank" href="brackett.jpeg">
+                <img src="brackett.jpeg" alt="brackett" width="400" height="300">
+                </a>
+                <div class="desc">This is Brackett Hall, where I take GEOL 1200</div>
+            </div>
+          </div>
+          <footer>&copy charliegrozier.com all rights reserved</footer>
+    </body>
+</html>
