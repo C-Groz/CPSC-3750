@@ -3,13 +3,15 @@
     <head>
         <title>CPSC 3750 Website</title>
     </head>
-    <body></body>
+    <script>
+        fetch("navbar.html")
+          .then(response => response.text())
+          .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+      </script> 
+    <body>
         <header>
             <h1>Group Assignment CSS - Charlie Grozier</h1>
         </header>
-        <nav>
-            <a href="index.html">Home</a><br>
-        </nav>
         <style>
             /* colors - background */
             body {
@@ -17,10 +19,6 @@
             }
 
             /* colors - text */
-            h1 {
-                color: green; 
-            }
-
             /* colors - border */
             div {
                 border-color: rgb(9, 0, 128); 

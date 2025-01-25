@@ -2,28 +2,26 @@
 <html>
     <head>
         <title>CPSC 3750 Website</title>
-        <link rel="stylesheet" type="text/css" href="articlestyles.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <body style="background-color:lightcyan"></body>
     </head>
 
-    <body>
-        <header>
-           <h1>Charlie's Website</h1>
-        </header>
-        <nav>
-            <a href="index.html">Home</a><br>
-            <a href="#history">History</a><br>
-            <a href="#personality">Personality</a><br>
-            <a href="#care">Caring for Your Pug</a><br>
-        </nav>
+    <script>
+        fetch("navbar.html")
+          .then(response => response.text())
+          .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    </script> 
+    <body class="demo">
+        <br>
+        <br>
         <article>
             <header>
-                <h2>The Wonderful World of Pugs: A Journey into the Lives of These Adorable Companions</h2>
+                <h2 class="demo">The Wonderful World of Pugs: A Journey into the Lives of These Adorable Companions</h2>
             </header>
             <section id="history">
                 <header>
-                    <img src="IMG_3284.jpeg" alt="pug photo" width="310" height="268">
-                    <h3>The History and Origins of Pugs</h3>
+                    <img class="demo" src="IMG_3284.jpeg" alt="pug photo" width="310" height="268">
+                    <h3 class="demo">The History and Origins of Pugs</h3>
                 </header>
                 <p> Pugs have a rich and fascinating history that dates back over 2,000 years. These small, wrinkly-faced dogs originated in China, where they were bred to be companions for royalty. The earliest records of pugs trace back to the Han dynasty (206 BCE to 220 CE), during which they were highly valued and often lived in lavish conditions alongside emperors and nobility.<br>
                     These early pugs were pampered members of the imperial courts and were even assigned their own guards. They were selectively bred to develop their distinct features: large expressive eyes, curled tails, and flat faces. The Chinese aristocracy believed that these dogs brought good fortune and prosperity, which contributed to their revered status.<br>
@@ -32,7 +30,7 @@
             </section>
             <section id="personality">
                 <header>
-                    <h3>The Unique Personality and Behavior of Pugs</h3>
+                    <h3 class="demo">The Unique Personality and Behavior of Pugs</h3>
                 </header>
                 <p>One of the most endearing qualities of pugs is their delightful personality. These small dogs are known for their playful, affectionate, and sometimes mischievous nature. They thrive on human companionship and have an innate ability to bring joy and laughter to their owners.<br>
                  Pugs are incredibly social animals. They love being around people and do not do well when left alone for extended periods. Their desire for constant companionship makes them excellent pets for families, seniors, and individuals who spend a lot of time at home. Because of their affectionate nature, they are sometimes referred to as "velcro dogs" because they love to stick by their owner's side at all times.<br>
@@ -43,17 +41,17 @@
                 </section>
             <section id="care">
                 <header>
-                    <h3>Caring for Your Pug: Health, Diet, and Grooming</h3>
+                    <h3 class="demo">Caring for Your Pug: Health, Diet, and Grooming</h3>
                 </header>
                 <p>Owning a pug comes with its own set of responsibilities, particularly in terms of health care and maintenance. Due to their unique physical characteristics, pugs require special attention to ensure they lead long, healthy lives.<p>
-                <h4>Health Concerns</h4>
+                <h4 class="demo">Health Concerns</h4>
                 <p>Pugs are a brachycephalic breed, meaning they have short skulls and flat faces. While this gives them their signature adorable look, it also comes with respiratory challenges. Many pugs suffer from brachycephalic obstructive airway syndrome (BOAS), which can cause breathing difficulties, especially in hot or humid weather. Owners should take extra precautions during summer months and avoid excessive physical exertion to prevent overheating.<br>
                 Pugs are also prone to obesity, which can lead to additional health problems such as joint issues, diabetes, and heart disease. Since they love to eat, it is important to monitor their diet and provide them with portion-controlled meals. Feeding high-quality dog food that is rich in nutrients while limiting treats is crucial to maintaining their weight.<br>
                 Another common health concern in pugs is eye problems. Their large, protruding eyes make them susceptible to infections, ulcers, and injuries. Regular cleaning and check-ups can help prevent these issues. Owners should also be cautious of situations where a pugs eyes could be scratched or irritated, such as rough play with other dogs or exposure to dust and debris.</p>
-                <h4>Diet and Nutrition</h4>    
+                <h4 class="demo">Diet and Nutrition</h4>    
                 <p>A balanced diet is essential for keeping a pug healthy and active. Pugs require a diet that includes lean proteins, healthy fats, and complex carbohydrates. Many commercial dog foods cater specifically to small breeds, offering the right blend of nutrients for their needs.<br>
                 To prevent overfeeding, owners should follow a strict feeding schedule and measure out portions. Treats should be given in moderation, and human foods that are toxic to dogs such as chocolate, grapes, onions, and caffeine should always be avoided.</p>
-                <h4>Grooming Needs</h4>
+                <h4 class="demo">Grooming Needs</h4>
                 <p>Despite their short coats, pugs shed quite a bit throughout the year. Regular brushing with a de-shedding tool can help reduce loose fur and keep their coats healthy. Bathing should be done once every few weeks or as needed, using a mild dog shampoo to prevent skin irritation.<br>
                 One of the most important grooming routines for pugs is facial wrinkle cleaning. Their deep facial folds can trap moisture, dirt, and bacteria, leading to infections and unpleasant odors. Owners should wipe between the wrinkles with a damp cloth or specialized pet wipes to keep the skin clean and dry.<br>
                 Nail trimming, ear cleaning, and dental hygiene are also vital parts of a pugs grooming routine. Regular nail trims prevent discomfort while walking, while ear cleaning helps avoid infections. Since pugs are prone to dental issues, brushing their teeth or providing dental chews can help maintain oral health.</p>

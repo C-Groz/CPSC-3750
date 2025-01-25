@@ -2,28 +2,25 @@
 <html>
     <head>
         <title>CPSC 3750 Website</title>
-        <link rel="stylesheet" type="text/css" href="articlestyles.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <body style="background-color:lightcyan"></body>
     </head>
-
-    <body>
-        <header>
-           <h1>Charlie's Website</h1>
-        </header>
-        <nav>
-            <a href="index.html">Home</a><br>
-            <a href="#rush">The Rush</a><br>
-            <a href="#joy">The Joy</a><br>
-            <a href="#speed">The Speed</a><br>
-        </nav>
+    <script>
+        fetch("navbar.html")
+          .then(response => response.text())
+          .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+      </script> 
+    <body class="demo">
+        <br>
+        <br>
         <article>
             <header>
-                <h2>The Thrill of Skiing: A Dance with the Mountains</h2>
+                <h2 class="demo">The Thrill of Skiing: A Dance with the Mountains</h2>
             </header>
             <section id="rush">
                 <header>
-                    <img src="IMG_0192.jpeg" alt="Ski Photo" width="268" height="310">
-                    <h3>The Rush</h3>
+                    <img  class="demo" src="IMG_0192.jpeg" alt="Ski Photo" width="268" height="310">
+                    <h3 class="demo">The Rush</h3>
                 </header>
                 <p> There is nothing quite like the rush of skiing down a mountainside, the crisp mountain air biting at your cheeks as you carve through fresh powder. It is an experience that combines adrenaline, skill, and an intimate connection with nature. Skiing is more than just a sport; it is a symphony of movement, a test of endurance, and a celebration of winter&#39s breathtaking beauty.<br> 
                     For those who have never strapped into a pair of skis, the appeal might seem elusive. However, from the moment you feel the smooth glide over snow and the exhilarating pull of gravity, you understand why so many are drawn to the slopes. Whether you're a beginner mastering the art of the snowplow or an expert carving tight turns on a black diamond run, every skier finds a unique joy in the journey down the mountain.<br>
@@ -34,7 +31,7 @@
             </section>
             <section id="joy">
                 <header>
-                    <h3>The Joy</h3>
+                    <h3 class="demo">The Joy</h3>
                 </header>
                 <p>Beyond the excitement and challenge, skiing brings an unparalleled sense of joy. There is a childlike wonder in the simple act of gliding across the snow, a pure and unfiltered happiness that comes with being in the moment. The joy of skiing is found in the little things the crunch of fresh snow beneath your boots, the golden glow of the sun on the slopes, and the deep breath of cold, crisp air that invigorates the soul.<br>
                     Each run is an opportunity to lose yourself in the rhythm of movement, to let go of worries and embrace the present. The repetitive motion of carving down the slopes, the weightless feeling of catching air over a small jump, and the triumphant satisfaction of conquering a difficult trail all contribute to an overwhelming sense of fulfillment.<br>
@@ -44,7 +41,7 @@
                 </section>
             <section id="speed">
                 <header>
-                    <h3>The Speed</h3>
+                    <h3 class="demo">The Speed</h3>
                 </header>
                 <p>Speed is one of the defining characteristics of skiing, offering an unmatched thrill that exhilarates the senses. The moment skis make contact with the slope, momentum takes over, propelling the skier forward in a controlled yet dynamic descent. The rush of wind, the blur of snow covered trees, and the sharp turns down a steep incline create an electrifying experience that is both thrilling and addictive.<br>
                     For many, the pursuit of speed is what makes skiing an adrenaline fueled sport. Advanced skiers push their limits, seeking out the steepest runs and the most challenging terrains to experience the raw power of velocity. Competitive skiers train to perfect their form, maximizing aerodynamics to slice through the air with minimal resistance.<br>

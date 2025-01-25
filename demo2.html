@@ -2,28 +2,25 @@
 <html>
     <head>
         <title>CPSC 3750 Website</title>
-        <link rel="stylesheet" type="text/css" href="articlestyles.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <body style="background-color:lightcyan"></body>
     </head>
-
-    <body>
-        <header>
-           <h1>Charlie's Website</h1>
-        </header>
-        <nav>
-            <a href="index.html">Home</a><br>
-            <a href="#history">History</a><br>
-            <a href="#technique">Technique</a><br>
-            <a href="#joy">The Joy</a><br>
-        </nav>
+    <script>
+        fetch("navbar.html")
+          .then(response => response.text())
+          .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+      </script> 
+    <body class="demo">
+        <br>
+        <br>
         <article>
             <header>
-                <h2>The Thrill of Water Skiing: Conquering the Waves with Speed and Skill</h2>
+                <h2 class="demo">The Thrill of Water Skiing: Conquering the Waves with Speed and Skill</h2>
             </header>
             <section id="history">
                 <header>
-                    <img src="pexels-pixabay-46537.jpg" alt="Water Ski Photo" width="310" height="268">
-                    <h3>The History and Evolution of Water Skiing</h3>
+                    <img  class="demo" src="pexels-pixabay-46537.jpg" alt="Water Ski Photo" width="310" height="268">
+                    <h3 class="demo">The History and Evolution of Water Skiing</h3>
                 </header>
                 <p>Water skiing is a high speed water sport that dates back to the early 20th century. The sport was first invented in 1922 by Ralph Samuelson, an adventurous Minnesotan who believed that if you could ski on snow, you could ski on water. Using a pair of wooden boards and a rope tied to a boat, he tested his theory on Lake Pepin, successfully gliding over the water and marking the birth of water skiing.<br>
                     Throughout the 20th century, water skiing evolved from a recreational pastime into a competitive sport. The 1930s and 1940s saw the introduction of official tournaments, with athletes developing new techniques for slalom skiing, trick skiing, and jumping. By the 1970s, advancements in equipment—such as fiberglass skis and specialized tow boats—further revolutionized the sport, making it more accessible and thrilling for both amateurs and professionals alike.<br>
@@ -31,7 +28,7 @@
             </section>
             <section id="technique">
                 <header>
-                    <h3>The Technique and Skills Required for Water Skiing</h3>
+                    <h3 class="demo">The Technique and Skills Required for Water Skiing</h3>
                 </header>
                 <p>Mastering water skiing requires a blend of balance, strength, and coordination. Unlike snow skiing, where gravity pulls you downhill, water skiing demands that you harness the power of a moving boat to maintain speed and stability on the water's surface.<br>
                     One of the fundamental skills in water skiing is learning the proper stance. Skiers must keep their knees slightly bent, arms extended but relaxed, and weight evenly distributed on both skis. The key to a smooth start is maintaining a strong core while gripping the tow rope, allowing the boats acceleration to lift them naturally out of the water.<br>
@@ -43,7 +40,7 @@
                 </section>
             <section id="joy">
                 <header>
-                    <h3>The Joy and Adrenaline of Water Skiing</h3>
+                    <h3 class="demo">The Joy and Adrenaline of Water Skiing</h3>
                 </header>
                 <p>The exhilaration of water skiing is unmatched, combining the rush of speed with the serenity of gliding across the water. Whether skimming over a glassy lake at sunrise or navigating ocean waves, the experience is both electrifying and meditative.<br>
                     One of the biggest thrills in water skiing comes from the sensation of speed. As the boat accelerates, skiers feel the wind rushing past and the rhythmic bounce over the waves. The challenge of maintaining balance while making tight turns adds an extra layer of excitement, making every ride unique and unpredictable.<br>
