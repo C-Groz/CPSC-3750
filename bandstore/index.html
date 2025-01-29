@@ -9,8 +9,16 @@
         <script>
             fetch("../navbar.html")
               .then(response => response.text())
-              .then(data => document.body.insertAdjacentHTML("afterbegin", data));
-        </script>
+              .then(data => {
+                document.body.insertAdjacentHTML("afterbegin", data);
+                
+                const link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = "../style.css"; 
+                document.head.appendChild(link);
+              })
+              .catch(error => console.error('Error loading navbar:', error));
+        </script> 
         <header class="main-header">
             <nav class="nav main-nav">
                 <ul>
