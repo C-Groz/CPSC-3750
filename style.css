@@ -93,11 +93,6 @@ div.navbar{
     text-align: center;
     background-color: lightcyan;
 }
-body{
-    margin: 0;
-    padding: 0;
-    border-top: 0;
-}
 
 body.demo {
     font-size: 10pt;    
