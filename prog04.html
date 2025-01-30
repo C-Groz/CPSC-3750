@@ -12,6 +12,134 @@
           .then(data => document.body.insertAdjacentHTML("afterbegin", data));
     </script>
     <body>
+        <div id="button_container">
+            <div id="red_container">
+                <button id="red_button">Red</button>
+                <p id="red_clicks">Red Clicks: </p>
+                <p id="red_hovers">Red Hovers: </p>
+            </div>
+            <div id="green_container">
+                <button id="green_button">Green</button>
+                <p id="green_clicks">Green Clicks: </p>
+                <p id="green_hovers">Green Hovers: </p>
+            </div>
+            <div id="blue_container"></div>
+                <button id="blue_button">Blue</button>
+                <p id="blue_clicks">Blue Clicks: </p>
+                <p id="blue_hovers">Blue Hovers: </p>
+            </div>
+        </div>
+        <style>
+            #button_container{
+                margin: auto;
+                margin-top: 50px;
+                width: fit-content;
+                text-align: center;
+            }
+            #red_container{
+                float: left;
+                padding-right: 20px;
+            }
+            #green_container{
+                float: left;
+                padding-right: 20px;
+            }
+            #blue_container{
+                float: left;
+            }
+            #red_button{
+                background-color: red;
+                padding: 30px 50px;
+                border-radius: 20px;
+                border: solid 2px;
+                font-size: 20pt;
+            }
+            #green_button{
+                background-color: green;
+                padding: 30px 50px;
+                border-radius: 20px;
+                border: solid 2px;
+                font-size: 20pt;
+            }
+            #blue_button{
+                background-color: blue;
+                padding: 30px 50px;
+                border-radius: 20px;
+                border: solid 2px;
+                font-size: 20pt;
+            }
+        </style>
+        <script>
+            /* Fetch red, green, and blue button id's from document */
+            const red_button = document.getElementById("red_button");
+            const green_button = document.getElementById("green_button");
+            const blue_button = document.getElementById("blue_button");
 
+            /* Add hover and click event listeners to red, green, and blue buttons */
+            red_button.addEventListener("click", redPress);
+            red_button.addEventListener("mouseover", redHoverIn);
+            red_button.addEventListener("mouseout", redHoverOut);
+
+            green_button.addEventListener("click", greenPress);
+            green_button.addEventListener("mouseover", greenHoverIn);
+            green_button.addEventListener("mouseout", greenHoverOut);
+
+            blue_button.addEventListener("click", bluePress);
+            blue_button.addEventListener("mouseover", blueHoverIn);
+            blue_button.addEventListener("mouseout", blueHoverOut);
+
+            /* Create and initialize variables for red, green, and blue buttons clicks and hovers */
+            let num_red_clicks = 0;
+            let num_red_hovers = 0;
+            let num_green_clicks = 0;
+            let num_green_hovers = 0;
+            let num_blue_clicks = 0;
+            let num_blue_hovers = 0;
+
+            /* Red Button's press and hover functions */
+            function redPress(){
+                document.body.style.backgroundColor = "red";
+                document.getElementById("red_clicks").innerHTML = "Red Clicks: " + ++num_red_clicks;
+            }
+            function redHoverIn(){
+                document.getElementById("red_button").style.backgroundColor = "black";
+                document.getElementById("red_button").style.color = "red";
+                document.getElementById("red_hovers").innerHTML = "Red Hovers: " + ++num_red_hovers;
+            }
+            function redHoverOut(){
+                document.getElementById("red_button").style.backgroundColor = "red";
+                document.getElementById("red_button").style.color = "black";            
+            }
+            
+            /* Green Button's press and hover functions */
+            function greenPress(){
+                document.body.style.backgroundColor = "green";
+                document.getElementById("green_clicks").innerHTML = "Green Clicks: " + ++num_green_clicks;
+            }
+            function greenHoverIn(){
+                document.getElementById("green_button").style.backgroundColor = "black";
+                document.getElementById("green_button").style.color = "green";
+                document.getElementById("green_hovers").innerHTML = "Green Hovers: " + ++num_green_hovers;
+            }
+            function greenHoverOut(){
+                document.getElementById("green_button").style.backgroundColor = "green";
+                document.getElementById("green_button").style.color = "black";            
+            }
+
+            /* Blue Button's press and hover functions */
+            function bluePress(){
+                document.body.style.backgroundColor = "blue";
+                document.getElementById("blue_clicks").innerHTML = "Blue Clicks: " + ++num_blue_clicks;
+            }
+            function blueHoverIn(){
+                document.getElementById("blue_button").style.backgroundColor = "black";
+                document.getElementById("blue_button").style.color = "blue";
+                document.getElementById("blue_hovers").innerHTML = "Blue Hovers: " + ++num_blue_hovers;
+            }
+            function blueHoverOut(){
+                document.getElementById("blue_button").style.backgroundColor = "blue";
+                document.getElementById("blue_button").style.color = "black";            
+            }
+        </script>
     </body> 
 </html>

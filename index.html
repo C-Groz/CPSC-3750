@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CPSC 3750 Website</title>
 </head>
+<script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script> 
 <body>
-  <script>
-    fetch("navbar.html")
-      .then(response => response.text())
-      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
-  </script>  
-  
   <div class="main_content">
     <h1>My name is Charlie Grozier. This is my website for CPSC 3750 Spring 2025.</h1>
     <img src="imgs/Headshot.jpeg" alt="Headshot Photo" width="268" height="310">

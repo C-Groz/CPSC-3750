@@ -1,21 +1,26 @@
-*{
+div.navbar{
+    margin: 0px;
+    padding-bottom: 0;
+    height: 60px;
+}
+.navbar *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
-    background: #f2f2f2;
+.navbar{
+    background: lightcyan;
 }
-nav{
+.navbar nav{
     background: #1b1b1b;
 }
-nav:after{
+.navbar nav:after{
     content: '';
     clear: both;
     display: table;
 }
-nav .logo{
+.navbar nav .logo{
     float: left;
     color: white;
     font-size: 20px;
@@ -24,7 +29,7 @@ nav .logo{
     padding-left: 60px;
     display: none;
 }
-nav ul{
+.navbar nav ul{
     /*float: right;*/
     text-align: center;
     list-style: none;
@@ -33,38 +38,38 @@ nav ul{
     position: relative;
     z-index: 1;
 }
-nav ul li{
+.navbar nav ul li{
     display: inline-block;
     background: #1b1b1b;
     margin: 0px 5px;
 }
-nav ul li a{
+.navbar nav ul li a{
     color: white;
     text-decoration: none;
     line-height: 60px;
     font-size: 18px;
     padding: 8px 15px;
 }
-nav ul li a:hover{
+.navbar nav ul li a:hover{
     color:cyan;
     border-radius: 5px;
     box-shadow: 0 0 5px #33ffff,
                         #66ffff;
     border-bottom: 2px solid cyan;
 }
-nav ul ul{
+.navbar nav ul ul{
     position: absolute;
     top: 70px;
     opacity: 0;
     visibility: hidden;
     transition: top .1s;
 }
-nav ul li:hover > ul{
+.navbar nav ul li:hover > ul{
     top: 52px;
     opacity: 1;
     visibility: visible;
 }
-nav ul ul li{
+.navbar nav ul ul li{
     position: relative;
     margin: 0px;
     left: -41px;
@@ -74,19 +79,24 @@ nav ul ul li{
     border: 2px solid cyan;
     border-radius: 10px;
 }
-nav ul ul ul li{
+.navbar nav ul ul ul li{
     width: 100px;
     position: relative;
     top: -50px;
     left: 136%;
     z-index: 1;
 }
-nav ul ul li a{
+.navbar nav ul ul li a{
     line-height: 50px;
 }
 .main_content{
     text-align: center;
     background-color: lightcyan;
+}
+body{
+    margin: 0;
+    padding: 0;
+    border-top: 0;
 }
 
 body.demo {
