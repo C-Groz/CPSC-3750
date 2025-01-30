@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CPSC 3750 Website</title>
+        <link rel="stylesheet" type="text/css" href="articlestyles.css">
+        <body style="background-color:lightcyan"></body>
+    </head>
+
+    <script>
+        fetch("navbar.html")
+          .then(response => response.text())
+          .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    </script>
+    <body>
+        
+    </body> 
+</html>
