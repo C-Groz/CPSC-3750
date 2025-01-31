@@ -15,17 +15,17 @@
         <div id="button_container">
             <div id="red_container">
                 <button id="red_button">Red</button>
-                <p id="red_clicks">Red Clicks: </p>
+                <p id="red_clicks">Red Count: </p>
                 <p id="red_hovers">Red Hovers: </p>
             </div>
             <div id="green_container">
                 <button id="green_button">Green</button>
-                <p id="green_clicks">Green Clicks: </p>
+                <p id="green_clicks">Green Count: </p>
                 <p id="green_hovers">Green Hovers: </p>
             </div>
             <div id="blue_container"></div>
                 <button id="blue_button">Blue</button>
-                <p id="blue_clicks">Blue Clicks: </p>
+                <p id="blue_clicks">Blue Count: </p>
                 <p id="blue_hovers">Blue Hovers: </p>
             </div>
         </div>
@@ -102,7 +102,7 @@
             /* Red Button's press and hover functions */
             function redPress(){
                 document.body.style.backgroundColor = "red";
-                document.getElementById("red_clicks").innerHTML = "Red Clicks: " + ++num_red_clicks;
+                document.getElementById("red_clicks").innerHTML = "Red Count: " + ++num_red_clicks;
             }
             function redHoverIn(){
                 document.getElementById("red_button").style.backgroundColor = "white";
@@ -117,7 +117,7 @@
             /* Green Button's press and hover functions */
             function greenPress(){
                 document.body.style.backgroundColor = "green";
-                document.getElementById("green_clicks").innerHTML = "Green Clicks: " + ++num_green_clicks;
+                document.getElementById("green_clicks").innerHTML = "Green Count: " + ++num_green_clicks;
             }
             function greenHoverIn(){
                 document.getElementById("green_button").style.backgroundColor = "white";
@@ -132,7 +132,7 @@
             /* Blue Button's press and hover functions */
             function bluePress(){
                 document.body.style.backgroundColor = "blue";
-                document.getElementById("blue_clicks").innerHTML = "Blue Clicks: " + ++num_blue_clicks;
+                document.getElementById("blue_clicks").innerHTML = "Blue Count: " + ++num_blue_clicks;
             }
             function blueHoverIn(){
                 document.getElementById("blue_button").style.backgroundColor = "white";
