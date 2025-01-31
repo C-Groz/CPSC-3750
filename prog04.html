@@ -15,18 +15,24 @@
         <div id="button_container">
             <div id="red_container">
                 <button id="red_button">Red</button>
-                <p id="red_clicks">Red Count: </p>
-                <p id="red_hovers">Red Hovers: </p>
+                <div id="data_container">
+                    <p id="red_clicks">Red Count: </p>
+                    <p id="red_hovers">Red Hovers: </p>
+                </div>
             </div>
             <div id="green_container">
                 <button id="green_button">Green</button>
-                <p id="green_clicks">Green Count: </p>
-                <p id="green_hovers">Green Hovers: </p>
+                <div id="data_container">
+                    <p id="green_clicks">Green Count: </p>
+                    <p id="green_hovers">Green Hovers: </p>
+                </div>
             </div>
             <div id="blue_container"></div>
                 <button id="blue_button">Blue</button>
-                <p id="blue_clicks">Blue Count: </p>
-                <p id="blue_hovers">Blue Hovers: </p>
+                <div id="data_container">
+                    <p id="blue_clicks">Blue Count: </p>
+                    <p id="blue_hovers">Blue Hovers: </p>
+                </div>
             </div>
         </div>
         <style>
@@ -70,6 +76,14 @@
                 border-radius: 20px;
                 border: solid 2px;
                 font-size: 20pt;
+            }
+            #data_container{
+                margin-top: 15px;
+                padding-top: 5px;
+                padding-bottom: 25px;
+                height: 60px;
+                background-color: white;
+                border-radius: 10px;
             }
         </style>
         <script>
