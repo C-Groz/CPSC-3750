@@ -9,6 +9,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Floydian'; 
+    src: url('fonts/floyd.TTF') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
     font-family: Raleway;
@@ -53,7 +60,7 @@ html, body {
 
 .main-header {
     background-color: rgba(0, 0, 0, .6);
-    background-image: url("Images/Header Background.jpg");
+    background-image: url("Images/pink-floyd-bg2.jpg");
     background-blend-mode: multiply;
     background-size: cover;
     padding-bottom: 30px;
@@ -62,24 +69,24 @@ html, body {
 .band-name {
     text-align: center;
     margin: 0;
-    font-size: 4em;
-    font-family: "Booter - Zero Zero";
+    font-size: 3em;
+    font-family: 'Floydian';
     font-weight: normal;
     color: white;
 }
 
 .band-name-large {
-    font-size: 8em;
+    font-size: 7em;
 }
 
 .content-section {
     margin: 1em;
 }
 
-.container {
+.btn_container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 1.5em;
+    padding: 0 250px;
 }
 .section-header {
     font-family: "Metal Mania";
@@ -137,8 +144,8 @@ html, body {
     border-radius: 0;
     font-size: 1.5em;
     font-weight: lighter;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: auto;
+    padding-right: auto;
 }
 
 .btn-header:hover {
