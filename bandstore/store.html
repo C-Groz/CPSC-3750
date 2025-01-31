@@ -7,6 +7,11 @@
        <script src="store.js" async></script>
     </head>
     <body>
+        <script>
+            fetch("../navbar.html")
+              .then(response => response.text())
+              .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+        </script>
         <header class="main-header">
             <nav class="main-nav nav">
                 <ul>
