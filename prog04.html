@@ -48,21 +48,24 @@
                 float: left;
             }
             #red_button{
-                background-color: red;
+                background-color: black;
+                color: white;
                 padding: 30px 50px;
                 border-radius: 20px;
                 border: solid 2px;
                 font-size: 20pt;
             }
             #green_button{
-                background-color: green;
+                background-color: black;
+                color: white;
                 padding: 30px 50px;
                 border-radius: 20px;
                 border: solid 2px;
                 font-size: 20pt;
             }
             #blue_button{
-                background-color: blue;
+                background-color: black;
+                color: white;
                 padding: 30px 50px;
                 border-radius: 20px;
                 border: solid 2px;
@@ -102,13 +105,13 @@
                 document.getElementById("red_clicks").innerHTML = "Red Clicks: " + ++num_red_clicks;
             }
             function redHoverIn(){
-                document.getElementById("red_button").style.backgroundColor = "black";
-                document.getElementById("red_button").style.color = "red";
+                document.getElementById("red_button").style.backgroundColor = "white";
+                document.getElementById("red_button").style.color = "black";
                 document.getElementById("red_hovers").innerHTML = "Red Hovers: " + ++num_red_hovers;
             }
             function redHoverOut(){
-                document.getElementById("red_button").style.backgroundColor = "red";
-                document.getElementById("red_button").style.color = "black";            
+                document.getElementById("red_button").style.backgroundColor = "black";
+                document.getElementById("red_button").style.color = "white";            
             }
             
             /* Green Button's press and hover functions */
@@ -117,13 +120,13 @@
                 document.getElementById("green_clicks").innerHTML = "Green Clicks: " + ++num_green_clicks;
             }
             function greenHoverIn(){
-                document.getElementById("green_button").style.backgroundColor = "black";
-                document.getElementById("green_button").style.color = "green";
+                document.getElementById("green_button").style.backgroundColor = "white";
+                document.getElementById("green_button").style.color = "black";
                 document.getElementById("green_hovers").innerHTML = "Green Hovers: " + ++num_green_hovers;
             }
             function greenHoverOut(){
-                document.getElementById("green_button").style.backgroundColor = "green";
-                document.getElementById("green_button").style.color = "black";            
+                document.getElementById("green_button").style.backgroundColor = "black";
+                document.getElementById("green_button").style.color = "white";            
             }
 
             /* Blue Button's press and hover functions */
@@ -132,13 +135,13 @@
                 document.getElementById("blue_clicks").innerHTML = "Blue Clicks: " + ++num_blue_clicks;
             }
             function blueHoverIn(){
-                document.getElementById("blue_button").style.backgroundColor = "black";
-                document.getElementById("blue_button").style.color = "blue";
+                document.getElementById("blue_button").style.backgroundColor = "white";
+                document.getElementById("blue_button").style.color = "black";
                 document.getElementById("blue_hovers").innerHTML = "Blue Hovers: " + ++num_blue_hovers;
             }
             function blueHoverOut(){
-                document.getElementById("blue_button").style.backgroundColor = "blue";
-                document.getElementById("blue_button").style.color = "black";            
+                document.getElementById("blue_button").style.backgroundColor = "black";
+                document.getElementById("blue_button").style.color = "white";            
             }
         </script>
     </body> 
