@@ -1,7 +1,12 @@
+body {
+    margin: 0;
+    padding-top: 28px;
+}
 
 .main_content{
     text-align: center;
     background-color: lightcyan;
+    padding-top: 0px;
 }
 
 body.demo {

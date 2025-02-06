@@ -1,7 +1,10 @@
 div.navbar{
-    
     margin: 0px;
-    padding-bottom: 0;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 .navbar *{
     margin: 0;
@@ -13,7 +16,8 @@ div.navbar{
     background: lightcyan;
 }
 .navbar nav{
-    background: #1b1b1b;
+    background: linear-gradient(180deg, black, rgb(58, 56, 56));
+    height: 50px;
 }
 .navbar nav:after{
     content: '';
@@ -25,65 +29,65 @@ div.navbar{
     color: white;
     font-size: 20px;
     font-weight: 600;
-    line-height: 70px;
-    padding-left: 60px;
-    display: none;
+    line-height: 50px;
+    padding-left: 30px;
+    /*display: ;*/
 }
 .navbar nav ul{
-    /*float: right;*/
+    float: right;
     text-align: center;
     list-style: none;
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
     position: relative;
     z-index: 1;
 }
 .navbar nav ul li{
     display: inline-block;
-    background: #1b1b1b;
-    margin: 0px 5px;
+    background: none;
+    margin: 0px 0px;
 }
 .navbar nav ul li a{
     color: white;
     text-decoration: none;
-    line-height: 60px;
-    font-size: 18px;
+    line-height: 50px;
+    font-size: 15px;
     padding: 8px 15px;
 }
 .navbar nav ul li a:hover{
     color:cyan;
-    border-radius: 5px;
     box-shadow: 0 0 5px #33ffff,
                         #66ffff;
     border-bottom: 2px solid cyan;
 }
 .navbar nav ul ul{
     position: absolute;
-    top: 70px;
+    top: 50px;
     opacity: 0;
     visibility: hidden;
     transition: top .1s;
 }
 .navbar nav ul li:hover > ul{
-    top: 52px;
+    top: 48px;
     opacity: 1;
     visibility: visible;
 }
 .navbar nav ul ul li{
     position: relative;
     margin: 0px;
-    left: -41px;
+    left: -20px;
     width: fit-content;
     float: none;
     display: list-item;
-    border: 2px solid cyan;
-    border-radius: 10px;
+    background: radial-gradient(black, rgb(58, 56, 56));
+    z-index: 2;
+    
 }
 .navbar nav ul ul ul li{
     width: 100px;
     position: relative;
-    top: -50px;
-    left: 136%;
+    top: -52px;
+    left: 130%;
     z-index: 1;
 }
 .navbar nav ul ul li a{
