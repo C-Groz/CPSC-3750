@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CPSC 3750 Website</title>
+  <link rel="stylesheet" type="text/css" href="ButtonMove.css">
+  <script type="text/javascript" src="ButtonMove.js"></script>
+</head>
+<script>
+  fetch("../navbar.html")
+    .then(response => response.text())
+    .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
+<body>
+    <div id="dropdown_container">
+        <button onclick="makeButton()" id="make_button">Make Button</button>
+        <select name="dropdown_colors" id="dropdown_colors">
+            <option value="tomato">Red</option>
+            <option value="lightgreen">Green</option>
+            <option value="aqua">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="white">White</option>
+        </select>
+        <button onclick="startMoving()" id="move">Move</button>
+        <button onclick="stopMoving()" id="stop">Stop</button>
+        <p id="total">Total: 0</p>
+    </div>
+</body>
+</html>

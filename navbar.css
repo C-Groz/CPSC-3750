@@ -17,7 +17,7 @@ div.navbar{
 }
 .navbar nav{
     background: linear-gradient(180deg, black, rgb(58, 56, 56));
-    height: 50px;
+    height: fit-content;
 }
 .navbar nav:after{
     content: '';

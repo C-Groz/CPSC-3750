@@ -1,0 +1,39 @@
+body, html{
+    background-color: lightcyan;
+    padding-top: 24px;
+}
+
+#dropdown_container{
+    margin: auto;
+    width: 75%;
+    height: 30px;
+    background-color: black;
+    z-index: -1;
+}
+
+#dropdown_colors{
+    position: relative;
+    float: left;
+}
+
+#make_button{
+    position: relative;
+    float: left;
+}
+
+#move{
+    position: absolute;
+    visibility: visible;
+}
+
+#stop{
+    position: absolute;
+    visibility: hidden;
+}
+
+#total{
+    position: relative;
+    font-size: 18pt;
+    padding-left: 200px;
+    color: white;
+}
