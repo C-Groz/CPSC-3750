@@ -1,6 +1,7 @@
 let total = 0;
 let moveInterval;
 
+//function which creates a new button in the viewing area
 function makeButton(){
     let buttonColor = document.getElementById("dropdown_colors").value;
     let button = document.createElement("button");
@@ -22,12 +23,14 @@ function makeButton(){
     button.style.top = randY + "px"
     button.style.left = randX + "px";
 
+    //create random initial direction to move
     button.dataset.directionX = (Math.random() > 0.5 ? 1 : -1) * (Math.floor(Math.random() * 3) + 1);
     button.dataset.directionY = (Math.random() > 0.5 ? 1 : -1) * (Math.floor(Math.random() * 3) + 1);
 
     document.body.appendChild(button);
 }
 
+//function which increments total and changes button color when clicked
 function newButtonPress(button){
     let buttonValue = parseInt(button.textContent);
     let buttonColor = document.getElementById("dropdown_colors").value;
@@ -36,6 +39,7 @@ function newButtonPress(button){
     document.getElementById("total").innerHTML = "Total: " + total;
 }
 
+//function which begins movement and switches move button to stop
 function startMoving(){
     let moveButton = document.getElementById("move");
     let stopButton = document.getElementById("stop");
@@ -46,6 +50,7 @@ function startMoving(){
     stopButton.style.visibility = "visible";
 }
 
+//function which stops movement and switches stop button to move
 function stopMoving(){
     let moveButton = document.getElementById("move");
     let stopButton = document.getElementById("stop");
@@ -55,23 +60,28 @@ function stopMoving(){
     stopButton.style.visibility = "hidden";
 }
 
-
+//function which is continuously called for movement 
 function move(){
     const buttons = document.getElementsByClassName("newButton");
     for(let i = 0; i < buttons.length; i++){
+
+        //store initial direction
         let directionX = parseInt(buttons[i].dataset.directionX);
         let directionY = parseInt(buttons[i].dataset.directionY);
 
+        //calclate new coordinates for button
         let newLeft = parseInt(buttons[i].style.left) + directionX;
         let newTop = parseInt(buttons[i].style.top) + directionY;
 
-        if (newLeft <= 0 || newLeft >= window.innerWidth - 25) {
+        //check for edges of screen, if on edge invert direction
+        if(newLeft <= 0 || newLeft >= window.innerWidth - 25) {
             buttons[i].dataset.directionX = -directionX; 
         }
-        if (newTop <= 85 || newTop >= window.innerHeight - 20) {
+        if(newTop <= 110 || newTop >= window.innerHeight - 20) {
             buttons[i].dataset.directionY = -directionY; 
         }
 
+        //update position of button
         buttons[i].style.left = (parseInt(buttons[i].style.left) + parseInt(buttons[i].dataset.directionX)) + "px";
         buttons[i].style.top = (parseInt(buttons[i].style.top) + parseInt(buttons[i].dataset.directionY)) + "px";
     }

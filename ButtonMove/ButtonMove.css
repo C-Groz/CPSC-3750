@@ -8,27 +8,31 @@ body, html{
     width: 75%;
     height: 30px;
     background-color: black;
-    z-index: -1;
 }
 
 #dropdown_colors{
     position: relative;
     float: left;
+    z-index: 999;
 }
 
 #make_button{
     position: relative;
     float: left;
+    z-index: 999;
 }
 
 #move{
     position: absolute;
+    float: left;
     visibility: visible;
+    z-index: 999;
 }
 
 #stop{
     position: absolute;
     visibility: hidden;
+    z-index: 999;
 }
 
 #total{
