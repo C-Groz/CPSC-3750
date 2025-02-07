@@ -6,7 +6,7 @@ function makeButton(){
     let buttonColor = document.getElementById("dropdown_colors").value;
     let button = document.createElement("button");
     let paddingX = 50;
-    let paddingY = 500;
+    let paddingY = 150;
     let randX = Math.floor(Math.random() * ((window.innerWidth - paddingX) - paddingX)) + paddingX;
     let randY = Math.floor(Math.random() * ((window.innerHeight- paddingY) - paddingY)) + paddingY;
     let value = Math.floor(Math.random() * 100);
