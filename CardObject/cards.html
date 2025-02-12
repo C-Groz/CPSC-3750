@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>JavaScript Business Cards</title>
+  </head>
+  <script>
+    fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+  </script>
+  <body>
+    <h1>Dynamic Business Cards</h1>
+    <div class="container">
+      <div id="form">
+      <form name="information_form">
+        <h2>Information Form</h2>
+        <label>Name:</label><br>
+        <input type="text" id="name" size="20"><br>
+        <label>Email:</label><br>
+        <input type="text" id="email" size="20"><br>
+        <label>Address:</label><br>
+        <input type="text" id="address" size="20"><br>
+        <label>Phone Number:</label><br>
+        <input type="text" id="phone" size="20"><br>
+        <label>Birthdate:</label><br>
+        <input type="date" id="birthday" size="20"><br><br>
+        <input type="button" id="submit" value="Submit" onclick="newCard();"><br>
+      </form>
+    </div>
+     <div id="cards_display">
+        <h2>Business Cards</h2>
+        <button id="show_cards_button" onclick="showCards()">Show Cards</button><br><br>
+      </div>
+    </div>
+    
+    <style>
+      html, body {
+        padding-top: 25px;
+      }
+      h1{
+        text-align: center;
+      }
+      .container{
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #form{
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      #cards_display{
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+    </style>
+    <script type="text/javascript" src="cards.js"></script> 
+</body>
+</html>
+
