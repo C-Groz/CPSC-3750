@@ -10,7 +10,7 @@ function printCard() {
 }
 
 function formatDate(dateString) {
-   if (!dateString) return; 
+   if(!dateString) return; 
 
    var parts = dateString.split("-");
    return `${parts[1]}/${parts[2]}/${parts[0]}`;
@@ -20,6 +20,7 @@ function showCards(){
    sue.printCard();
    fred.printCard();
    jimbo.printCard();
+   document.getElementById("show_cards_button").onclick = null;
 }
 
 function newCard(){
