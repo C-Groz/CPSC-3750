@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CPSC 3750 Website</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <script>
+        fetch("navbar.html")
+          .then(response => response.text())
+          .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+      </script> 
+    <body>
+        <div id="container">
+            <h1>Group Assignment - Events</h1>
+        
+            <h2>Animation Event</h2>
+            <div id="animation-box"></div>
+            <button id="start-animation">Move to the right</button>
+            <p id="animation-info">&nbsp</p>
+
+            <h2>Drag Event</h2>
+            <p>Drag box left and right</p>
+            <div id="drag-container">
+                <div id="drag-box" draggable="true"></div>
+            </div>
+
+            <h2>Input Event</h2>
+            <input type="text" id="text-input" placeholder="Type something here"/>
+            <p>Text: <span id="output-text"></span></p>
+
+            <h2>Mouse Event</h2>
+            <p>Hover over this box:</p>
+            <div id="mouseover-box"></div>
+
+            <h2>Focus Event</h2>
+            <p id="focus-message">Click on the input field to focus:</p>
+            <input type="text" id="focus-input" placeholder="Click here..." />
+        </div>
+        <style>
+            h1 {
+                text-align: center;
+            }
+
+            #container {
+                margin: 50px;
+            }
+
+            /* Animation Event */
+            #animation-box{
+                width: 50px;
+                height: 50px;
+                background: red;
+                position: relative;
+            }
+
+            @keyframes moveRight {
+                from {left: 0px; }
+                to { left: 200px; }
+            }
+            @keyframes moveLeft {
+                from {left: 200px; }
+                to {left: 0px; }
+            }
+
+            .animate-right{
+                animation: moveRight 3s forwards;
+            }
+            .animate-left{
+                animation: moveLeft 3s forwards;
+            }
+
+            /* Drag Event */
+            #drag-container {
+                width: 300px;
+                height: 50px;
+                border: 2px solid black;
+                position: relative;
+            }
+
+            #drag-box {
+                width: 50px;
+                height: 50px;
+                background: red;
+                cursor: grab;
+            }
+
+            /* Mouse Event */
+            #mouseover-box{
+                width: 50px;
+                height: 50px;
+                background: red;
+                position: relative;
+            }
+
+            /* Focus Event */
+            #focus-input{
+                width: 300px;
+                border: 2px solid black;
+            }
+        </style>
+        <script>
+
+            // Animation Event
+            let left = true;
+            let animationBox = document.getElementById("animation-box");
+
+            document.getElementById("start-animation").addEventListener("click", function(){
+                if(left) {
+                    animationBox.classList.add("animate-right");
+                    animationBox.classList.remove("animate-left");
+                    document.getElementById("start-animation").innerText = "Move to the left";
+                    left = false;
+                }
+                else {
+                    animationBox.classList.add("animate-left");
+                    animationBox.classList.remove("animate-right");
+                    document.getElementById("start-animation").innerText = "Move to the right";
+                    left = true;
+                }
+            });
+            animationBox.onanimationstart = function(event){
+                document.getElementById("animation-info").innerText="Animation Running";
+            };
+
+            animationBox.onanimationend = function(event){
+                document.getElementById("animation-info").innerText="Animation Ended";
+            };
+
+
+            // Drag Event
+            let dragBox = document.getElementById("drag-box");
+            let dragContainer = document.getElementById("drag-container");
+
+            dragBox.ondragstart = function(event){
+                event.dataTransfer.setData("text/plain", event.target.id);
+            };
+
+            dragContainer.ondragover = function(event){
+                event.preventDefault();
+            };
+
+            dragContainer.ondrop = function(event){
+                event.preventDefault();
+
+                const draggedElement = document.getElementById(event.dataTransfer.getData("text"));
+                const rect = container.getBoundingClientRect();
+            
+                draggedElement.style.position = "absolute";
+                draggedElement.style.left = `${event.clientX - rect.left - (draggedElement.clientWidth / 2)}px`;
+                draggedElement.style.top = `${event.clientY - rect.top - (draggedElement.clientHeight / 2)}px + 200`;
+            };
+
+
+            // Input Event
+            let textInput = document.getElementById("text-input");
+
+            textInput.oninput = function(){
+                let text = this.value;
+                document.getElementById("output-text").innerText = text;
+            };
+
+
+            // Mouse Event
+            let mouseOverBox = document.getElementById("mouseover-box");
+
+            mouseOverBox.onmouseover = function(){
+                mouseOverBox.style.background = "green";
+            };
+
+            mouseOverBox.onmouseleave = function(){
+                mouseOverBox.style.background = "red";
+            };
+
+            // Focus Event
+            let inputField = document.getElementById("focus-input");
+
+            inputField.onfocus = function(){
+                inputField.style.border = "2px solid blue";
+                document.getElementById("focus-message").innerText = "Input field is focused";
+            };
+
+            inputField.onblur = function(){
+                inputField.style.border = "2px solid black";
+                document.getElementById("focus-message").innerText = "Click on the input field to focus:";
+            };
+        </script>    
+    </body>
+</html>
