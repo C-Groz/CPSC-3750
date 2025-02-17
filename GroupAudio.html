@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CPSC 3750 Website</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <script>
+        fetch("navbar.html")
+          .then(response => response.text())
+          .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+      </script> 
+    <body>
+        <div id="container">
+            <h1>Group Assignment Audio - Charlie Grozier</h1>
+
+            <audio id="myAudio" controls>
+                <source src="3-2-1-go.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <h1>Played Demo</h1>
+            <p id="played">Song is not being played</p>
+
+            <h1>Paused Demo</h1>
+            <p id="paused">Song is paused</p>
+
+            <h1>Volume Demo</h1>
+            <p>Volume: <span id="volume">1.0</span></p>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+
+            <h1>Duration Demo</h1>
+            <button id="duration-button">Click To Reveal Duration</button>
+            <p id="duration">Duration:</p>
+
+            <h1>Current Time Demo</h1>
+            <button id="current-time-button">Click To Reveal Current Time</button>
+            <p id="current-time">Current Time: </p>
+
+        </div>
+        <script>
+            audioElement = document.getElementById("myAudio");
+
+            // Played Demo
+            audioElement.addEventListener("timeupdate", () => {
+                if(audioElement.played.length > 0){
+                    document.getElementById("played").innerText = "Song started playing";
+                }
+            });
+
+            // Paused Demo
+            audioElement.addEventListener("play", () => {
+                document.getElementById("paused").innerText = "Song is not paused";
+            });
+
+            audioElement.addEventListener("pause", () => {
+                document.getElementById("paused").innerText = "Song is paused";
+            });
+
+            // Volume Demo
+            const volumeSlider = document.getElementById("volume-slider");
+            const volumeValue= document.getElementById("volume");
+
+            volumeSlider.addEventListener("input", function(){
+                audioElement.volume = volumeSlider.value;
+                volumeValue.innerText = volumeSlider.value;
+            });
+
+            audioElement.addEventListener("volumechange", function(){
+                volumeValue.innerText = audioElement.volume.toFixed(1);
+                volumeSlider.value = audioElement.volume;
+            });
+
+            // Duration Demo
+            document.getElementById("duration-button").onclick = function(){
+                document.getElementById("duration").innerText = "Duration: " + audioElement.duration;
+            };
+
+            // Current Time Demo
+            document.getElementById("current-time-button").onclick = function(){
+                document.getElementById("current-time").innerText = "Current Time: " + audioElement.currentTime;
+            };
+        </script>
+        <style>
+            body{
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+        </style>
+    </body>
+</html>
