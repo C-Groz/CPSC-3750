@@ -16,6 +16,7 @@ function makeButton(){
     button.onclick = function(){
         newButtonPress(button);
     }
+    
 
     button.style.position = "absolute";
     button.style.background = buttonColor;
