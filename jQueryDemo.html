@@ -3,6 +3,7 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>JQuery Demo</title>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -63,6 +64,14 @@
             padding-top: 20px;
         }
 
+        h1{
+            text-align: center;
+        }
+
+        #instructions{
+            text-align: center;
+        }
+
         button{
             padding: 10px;
             font-size: 13pt;
@@ -84,7 +93,10 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to My Homepage</h1>
+    <h1>Welcome to My JQuery Demo</h1>
+    <p id="instructions">1. Choose today's date using the calender</p>
+    <p id="instructions">2. Start a fade animation on the div's below by pressing the Fade Div buttons</p>
+    <p id="instructions">3. Check out the accordian and status bar at the bottom of the page</p>
 
     <p>Choose Today's Date: <input type="text" id="date_picker"></p>
 

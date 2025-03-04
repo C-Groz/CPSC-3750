@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title>Displaying Keypresses</title>
+    <title>Keypress Demo</title>
     <script type="text/javascript">
     function displayKey(e) {
        // which key was pressed?
@@ -52,13 +52,27 @@
    body, html{
       padding-top: 20px;
    }
+   h1{
+    text-align: center;
+   }
+   p{
+    text-align: center;
+   }
+   #keys{
+    text-align: center;
+   }
   </style>
   </head>
   <body onkeypress="displayKey(event)">
     <h1>Displaying Typed Characters</h1>
-    <p>This document includes a simple script that displays 
-    the keys you type as a new paragraph below. Type a few keys 
-    to try it. </p>
+    <p>This document includes a script that displays 
+    the keys you type as a new paragraph below.</p>
+    <p>1. All vowels pressed will display uppercase.</p>
+    <p>2. Typing b or B will turn the background blue</p>
+    <p>3. Typing r or R will turn the background red</p>
+    <p>4. Typing g or G will turn the background green</p>
+    <p>Start typing to try it out:</p>
+
     <div id="keys"></div>
   </body>
 </html>

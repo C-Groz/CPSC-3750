@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CPSC 3750 Website</title>
+  <title>Button Move</title>
   <link rel="stylesheet" type="text/css" href="ButtonMove.css">
 </head>
 <script>
@@ -11,6 +11,13 @@
     .then(data => document.body.insertAdjacentHTML("afterbegin", data));
 </script>
 <body>
+    <h1>Button Move Game</h1>
+    <p id="instructions">1. Create buttons using the "make button" button</p>
+    <p id="instructions">2. Choose a color from the dropdown, which will become the color of pressed buttons</p>
+    <p id="instructions">3. Increase total by changing button colors</p>
+    <p id="instructions">4. Start and stop motion of buttons using "move" button</p>
+
+
     <div id="dropdown_container">
         <button onclick="makeButton()" id="make_button">Make Button</button>
         <select name="dropdown_colors" id="dropdown_colors">

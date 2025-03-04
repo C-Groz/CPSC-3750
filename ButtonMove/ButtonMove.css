@@ -1,6 +1,13 @@
 body, html{
-    background-color: lightcyan;
     padding-top: 24px;
+}
+
+h1{
+    text-align: center;
+}
+
+#instructions{
+    text-align: center;
 }
 
 #dropdown_container{
