@@ -4,10 +4,12 @@ document.getElementById("cheat-mode-box").addEventListener("change", function(){
     if(cheatMode == true){
         cheatMode = false;
         cheatModeLabel.innerText = "Enable Cheat Mode";
+        console.log("1");
     }
     else{
         cheatMode = true;
         cheatModeLabel.innerText = "Disable Cheat Mode";
+        console.log("2");
     }
 })
 
