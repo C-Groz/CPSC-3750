@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>AJAX and Handlebars Demo</title>
+    <script>
+        fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    </script>
+    <style>
+        body, html{
+            margin-top: 30px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        #btn{
+            width: 200px;
+            height: 40px;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        #pet-info{
+            padding-top: 5px;
+            padding-bottom: 25px;
+            margin: 5px auto;
+            display: block;
+            width: 800px;
+            height: 50px;
+            background-color: aquamarine;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .hide-me{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JSON, AJAX, and Handlebars Demo</h1>
+        <button id="btn">Fetch Info for 3 new animals</button>
+    </header>
+
+    <div id="animal-container"></div>
+
+    <script id="animal-info-template" type="text/x-handlebars-template">
+        {{#each .}}
+            <div id="pet-info">
+                <h2>
+                    {{name}} is a {{species}} who likes 
+                    {{#each foods.likes}}{{this}}{{#unless @last}} and {{/unless}}{{/each}} 
+                    and dislikes 
+                    {{#each foods.dislikes}}{{this}}{{#unless @last}} and {{/unless}}{{/each}}.
+                </h2>
+            </div>
+        {{/each}}
+    </script>
+
+    <script src="AJAXdemo.js"></script>
+    <script src="../js/handlebars-v4.7.8.js"></script>
+</body>
+</html>
