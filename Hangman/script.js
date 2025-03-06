@@ -1,4 +1,15 @@
 var cheatMode = false;
+var cheatModeLabel = document.getElementById("cheat-mode-label");
+document.getElementById("cheat-mode-box").addEventListener("change", function(){
+    if(cheatMode == true){
+        cheatMode = false;
+        cheatModeLabel.innerText = "Enable Cheat Mode";
+    }
+    else{
+        cheatMode = true;
+        cheatModeLabel.innerText = "Disable Cheat Mode";
+    }
+})
 
 function startGame() {
    // Fetch a new word from the server
