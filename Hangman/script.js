@@ -18,6 +18,7 @@ cheatModeBox.addEventListener("change", function(){
     }
 })
 
+
 function startGame() {
    // Fetch a new word from the server
    fetch('getWord.php')
