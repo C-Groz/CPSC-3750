@@ -1,16 +1,20 @@
 var cheatMode = false;
 var cheatModeLabel = document.getElementById("cheat-mode-label");
 var cheatModeBox = document.getElementById("cheat-mode-box");
+
+var currentWord;
+var currentWordString;
+const wordToGuess = document.getElementById('wordToGuess');
+
+
 cheatModeBox.addEventListener("change", function(){
     if(cheatMode == true){
         cheatMode = false;
         cheatModeLabel.innerText = "Enable Cheat Mode";
-        console.log("1");
     }
     else{
         cheatMode = true;
         cheatModeLabel.innerText = "Disable Cheat Mode";
-        console.log("2");
     }
 })
 
@@ -32,9 +36,10 @@ function startGame() {
 }
 
 function setupGame(word) {
-   const wordToGuess = document.getElementById('wordToGuess');
-   wordToGuess.innerHTML = '_ '.repeat(word.length).trim();
+   currentWordString = '_ '.repeat(word.length).trim();
+   wordToGuess.innerHTML = currentWordString;
    generateLetterButtons();
+   currentWord = word;
 }
 
 function generateLetterButtons() {
@@ -50,10 +55,27 @@ function generateLetterButtons() {
 }
 
 function guessLetter(letter) {
-   console.log('Guessed letter:', letter);
-   // Implement the guessing logic here
-   // This is where you would update the displayed word or handle incorrect guesses
+    let correct = false; 
+    for(let i = 0; i < currentWord.length; i++){
+        if(currentWord[i] == letter){
+            correctGuess(currentWord[i], i);
+            correct = true;
+        }
+    }
+    if(!correct){
+        inCorrectGuess(letter);
+    }
 }
+
+function correctGuess(letter, index){
+    currentWordString[index * 2] = letter;
+    wordToGuess = currentWordString;
+}
+
+function inCorrectGuess(letter){
+    
+}
+
 
 // Initially start the game
 startGame();
