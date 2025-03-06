@@ -1,3 +1,5 @@
+var cheatMode = false;
+
 function startGame() {
    // Fetch a new word from the server
    fetch('getWord.php')
