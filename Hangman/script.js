@@ -1,6 +1,7 @@
 var cheatMode = false;
 var cheatModeLabel = document.getElementById("cheat-mode-label");
-document.getElementById("cheat-mode-box").addEventListener("change", function(){
+var cheatModeBox = document.getElementById("cheat-mode-box");
+cheatModeBox.addEventListener("change", function(){
     if(cheatMode == true){
         cheatMode = false;
         cheatModeLabel.innerText = "Enable Cheat Mode";
@@ -19,10 +20,12 @@ function startGame() {
        .then(response => response.json())
        .then(data => {
            if(data.word) {
-						   alert(data.word);
-               setupGame(data.word);
+			    if(cheatMode){    
+                    alert(data.word);
+                }
+            setupGame(data.word);
            } else {
-               console.error('Error fetching word:', data.error);
+                console.error('Error fetching word:', data.error);
            }
        })
        .catch(error => console.error('Error:', error));
