@@ -2,9 +2,13 @@ var cheatMode = false;
 var cheatModeLabel = document.getElementById("cheat-mode-label");
 var cheatModeBox = document.getElementById("cheat-mode-box");
 
+var correctCount = 0;
+var incorrectCount = 0;
+var guessedLeters = [];
 var currentWord;
 var currentWordString;
 const wordToGuess = document.getElementById('wordToGuess');
+
 
 
 cheatModeBox.addEventListener("change", function(){
@@ -58,23 +62,47 @@ function generateLetterButtons() {
 function guessLetter(letter) {
     let correct = false; 
     for(let i = 0; i < currentWord.length; i++){
-        if(currentWord[i] == letter){
-            correctGuess(currentWord[i], i);
+        if(currentWord[i].toUpperCase() == letter && !guessedLeters.includes(letter)){
+            guessedLeters.push(letter);
+            correctGuess(letter, i);
             correct = true;
         }
     }
-    if(!correct){
+    if(!correct && !guessedLeters.includes(letter)){
+        guessedLeters.push(letter);
         inCorrectGuess(letter);
     }
 }
 
 function correctGuess(letter, index){
-    currentWordString[index * 2] = letter;
-    wordToGuess = currentWordString;
+    let currentWordArray = currentWordString.split('');
+    currentWordArray[index * 2] = letter;
+    currentWordString = currentWordArray.join('');
+    wordToGuess.innerHTML = currentWordString;
+
+    correctCount++;
+    if(correctCount >= currentWord.length){
+        alert("You Win!");
+        correctCount = 0;
+        incorrectCount = 0;
+        guessedLeters = [];
+    }
 }
 
 function inCorrectGuess(letter){
-    
+    incorrectCount++;
+    guessedLeters.push(letter);
+    let img = document.getElementById('img');
+    img.src = "" + (incorrectCount + 1) + ".jpeg";
+
+    if(incorrectCount >= 11){
+        alert("You Lose. The word was " + currentWord);
+        correctCount = 0;
+        incorrectCount = 0;
+        guessedLeters = [];
+        img.src = "1.jpeg";
+        startGame();
+    }
 }
 
 

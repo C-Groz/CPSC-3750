@@ -14,6 +14,21 @@ body {
    width: 40px;
 }
 
+#img-div{
+   height: 80px;
+   width: 83px;
+   margin: 0 auto;
+}
+
+#img{
+   padding: 0 auto;
+}
+
+#letters {
+   width: 250px;
+   margin: 0 auto;
+}
+
 .hidden {
    visibility: hidden;
 }
