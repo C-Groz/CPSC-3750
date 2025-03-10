@@ -86,6 +86,7 @@ function correctGuess(letter, index){
         correctCount = 0;
         incorrectCount = 0;
         guessedLeters = [];
+        img.src = "1.jpeg";
     }
 }
 
