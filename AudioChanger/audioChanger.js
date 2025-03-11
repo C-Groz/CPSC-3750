@@ -32,6 +32,7 @@ titleButtons.forEach(button => {
 
 let playing = false;
 let currentTitleTime;
+let titleCount = 6;
 
 function forward(){
     if(song.currentTime + 5 < song.duration){
@@ -81,6 +82,9 @@ function formatTime(secondsIn){
 
 
 function addTitle(){
+    if(titleCount >= 50)
+        return;
+    
     let titleTime = song.currentTime;
     let titleName = prompt("Enter name for title at " + formatTime(titleTime) + " seconds:");
 
@@ -112,6 +116,7 @@ function addTitle(){
         currentTitleTime = time;
     })
     
+    titleCount++;
 }
 
 function deleteTitle(){
@@ -121,6 +126,7 @@ function deleteTitle(){
             if(title.getAttribute("data-time") == currentTitleTime){
                 title.remove();
                 currentTitle.innerText = "None";
+                titleCount--;
             }
         })
     }
