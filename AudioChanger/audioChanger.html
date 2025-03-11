@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Changer</title>
+</head>
+<script>
+  fetch("../navbar.html")
+    .then(response => response.text())
+    .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
+<style>
+    html, body{
+        margin-top: 30px;
+    }
+    img{
+        height: 200px;
+        width: 200px
+    }
+    #container{
+        text-align: center;
+    }
+    #song-controls-container button{
+        margin-left: 10px;
+        margin-bottom: 10px;
+        width: 100px;
+        height: 30px;
+        background-color: rgb(154, 201, 235);
+    }
+    #title-controls-container button{
+        margin-left: 10px;
+        background-color: rgb(154, 201, 235);
+        width: 100px;
+        height: 30px;
+    }
+    #title-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #titles-title{
+        font-size: 18pt;
+    }
+    .title{
+        width: 200px;
+        height: 40px;
+        margin-top: 5px;
+        background-color: rgb(154, 201, 235);
+    }
+</style>
+<body>
+    <div id="container">
+        <h1>Project 1: Audio Changer</h1>
+        <img src="album.jpg">
+        <p><strong>File: </strong>civilwar.ogg</p>
+        <p><strong>Song Name: </strong>Civil War - Guns N' Roses</p>
+        <p><strong>Current Title: </strong><label id="current-title">none</p>
+        <div id="song-controls-container">
+            <button id="rewind">Rewind 5s</button>
+            <button id="play">Play</button>
+            <button id="forward">Forward 5s</button>
+        </div>
+        <div id="title-controls-container">
+            <button id="add-title">Add Title</button>
+            <button id="delete-title">Delete Title</button>
+        </div>
+        <p id="current-song-time">00:00</p>
+        <p id="titles-title"><strong>Titles:</strong></p>
+        <div id="title-container">
+            <button class="title" data-time=".01">Begining</button>
+            <button class="title" data-time="12">First Note</button>
+            <button class="title" data-time="80">Beat Drop</button>
+            <button class="title" data-time="205">Guitar Solo</button>
+            <button class="title" data-time="232">Middle</button>
+            <button class="title" data-time="464">End</button>
+        </div>
+    </div>
+    
+
+    <audio id="song"><source src="civilwar.ogg" type="audio/ogg"></audio>
+    <script src="audioChanger.js"></script>
+</body>
+</html>
