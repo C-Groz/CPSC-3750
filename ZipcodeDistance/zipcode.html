@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Zipcode Distance</title>
+   <link rel="stylesheet" href="zipcode.css">
+</head>
+<style>
+    body, html{
+        margin-top: 30px;
+    }
+</style>
+<script>
+    fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
+<body>
+    <div id="container">
+        <h1>Zipcode Distance Calculator</h1>
+        <h2>Author: Charlie Grozier</h2>
+        <div id="input">
+            <input type="text" id="zip1" name="zip1" placeholder="Enter First Zipcode">
+            <input type="text" id="zip2" name="zip2" placeholder="Enter Second Zipcode">
+            <div id="hide">
+                <p>Hide Intermediate Information:<input type="checkbox" id="hide-info"></p>
+            </div>
+            <button onclick="submit()">Submit</button>
+        </div>
+        <div id="output"></div>
+    </div>
+    <script src="zipcode.js"></script>
+    <script src="https://unpkg.com/geolib"></script>
+</body>
+</html>
