@@ -32,9 +32,9 @@ function displayResults() {
    for (i = 0; i < names.length; i++) {
       li = document.createElement("li");
       if(names[i].firstChild != null){
-         name = names[i].firstChild.nodeValue;
+         name1 = names[i].firstChild.nodeValue;
       }
-      text = document.createTextNode(name);
+      text = document.createTextNode(name1);
       li.appendChild(text);
       ul.appendChild(li);
    }
