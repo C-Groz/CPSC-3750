@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AJAX Live Search Example</title>
+    <script type="text/javascript" src="ajax.js"></script>
+   </head>
+   <style>
+      body, html{
+        margin-top: 30px;
+      }
+   </style>
+   <!--
+   <script>
+      fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+   </script>
+   -->
+   <body>
+     <h1>AJAX Live Search Example</h1>
+
+     <p><strong>Search for:</strong>
+     <input type="text" size="40" id="searchlive"></p>
+
+     <div id="results">
+
+      <ul id="list">
+      <li>[Search results will display here.]</li>
+      </ul>
+
+     </div>
+     
+     <script type="text/javascript" src="search.js"></script>
+   </body>
+</html>
