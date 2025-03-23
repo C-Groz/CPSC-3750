@@ -31,7 +31,9 @@ function displayResults() {
    names = ajaxreq.responseXML.getElementsByTagName("name");
    for (i = 0; i < names.length; i++) {
       li = document.createElement("li");
-      name = names[i].firstChild.nodeValue;
+      if(names[i].firstChild != null){
+         name = names[i].firstChild.nodeValue;
+      }
       text = document.createTextNode(name);
       li.appendChild(text);
       ul.appendChild(li);
