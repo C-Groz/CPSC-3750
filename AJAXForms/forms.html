@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script>
+  fetch("../navbar.html")
+    .then(response => response.text())
+    .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
+<style>
+  html, body{
+      margin-top: 30px;
+  }
+</style>
+<body>
+    <h2>Enter Data:</h2>
+    <form id="dataForm" action="save_data.php" method="post">
+        Name: <input type="text" name="name" id="name" value=""><br>
+        Age: <input type="number" name="age" id="age" value=""><br>
+        Favorite Food: <input type="text" name="food" id="food" value=""><br>
+        Favorite Animal: <input type="text" name="animal" id="animal" value=""><br>
+        Favorite Color: <input type="text" name="color" id="color" value=""><br>
+        Favorite NFL Team: <input type="text" name="nfl" id="nfl" value=""><br>
+        Favorite MLB Team: <input type="text" name="mlb" id="mlb" value=""><br>
+        Favorite NHL Team: <input type="text" name="nhl" id="nhl" value=""><br>
+        Favorite College Football Team: <input type="text" name="cfb" id="cfb" value=""><br>
+        Favorite Sport: <input type="text" name="sport" id="sport" value=""><br>
+        <input type="submit" value="Save Data">
+    </form>
+    <button onclick="getData();">Get Data</button>
+    <button onclick="clearForm();">Clear</button>
+<script>
+function getData() {
+  $(document).ready(function() {
+    $.ajax({
+      url: 'get_data.php',
+      type: 'GET',
+      success: function(response) {
+        $('#name').val(response.name);
+        $('#age').val(response.age);
+        $('#food').val(response.food);
+        $('#animal').val(response.animal);
+        $('#color').val(response.color);
+        $('#nfl').val(response.nfl);
+        $('#mlb').val(response.mlb);
+        $('#nhl').val(response.nhl);
+        $('#cfb').val(response.cfb);
+        $('#sport').val(response.sport);
+      }
+    });
+  });
+}
+function clearForm(){
+  $('#name').val('');
+  $('#age').val('');
+  $('#food').val('');
+  $('#animal').val('');
+  $('#color').val('');
+  $('#nfl').val('');
+  $('#mlb').val('');
+  $('#nhl').val('');
+  $('#cfb').val('');
+  $('#sport').val('');
+}
+</script>
+</body>
+</html>
