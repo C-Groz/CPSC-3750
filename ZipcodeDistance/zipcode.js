@@ -1,3 +1,5 @@
+import * as geolib from 'geolib';
+
 let zip1 = document.getElementById("zip1");
 let zip2 = document.getElementById("zip2");
 let hideIntermediate = document.getElementById("hide-info");
