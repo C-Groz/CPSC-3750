@@ -1,17 +1,16 @@
 
 body {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f9;
-    color: #333;
+    color: black;
     padding: 20px;
     margin-top: 30px;
 }
 
 h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 24pt;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: black;
 }
 
 #movieForm {
@@ -31,13 +30,11 @@ h1 {
 
 button {
     padding: 10px 20px;
-    font-size: 1em;
-    background-color: #3498db;
+    font-size: 12pt;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
