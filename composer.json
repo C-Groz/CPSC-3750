@@ -1,5 +1,13 @@
 {
+    "name": "charliegrozier/cpsc-3750-3",
+    "description": "Movie API",
     "require": {
         "guzzlehttp/guzzle": "^7.9"
-    }
+    },
+    "authors": [
+        {
+            "name": "y"
+        }
+    ],
+    "minimum-stability": "stable"
 }
