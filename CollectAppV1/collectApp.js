@@ -39,6 +39,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     });
                     
                     movieElement.appendChild(showDetailsButton);
+                    movieElement.appendChild(detailsContainer);
                     resultsDiv.appendChild(movieElement);
             }
             }else{
