@@ -6,19 +6,22 @@ header('Content-Type: application/json');
 require '../vendor/autoload.php';
 
 $query = isset($_GET['query']) ? $_GET['query'] : '';
-$apiKey = 'd73d06ff';
 
 $client = new \GuzzleHttp\Client();
 
 
-$response = $client->request('GET', 'http://www.omdbapi.com/', [
+$response = $client->request('GET', 'https://api.themoviedb.org/3/search/movie', [
     'query' => [
-        'apikey' => $apiKey,  
-        's' => $query,       
-        'type' => 'movie',    
+        'query' => $query,
+        'include_adult' => false,
+        'language' => 'en-US',
+        'page' => 10,
+    ],
+    'headers' => [
+        'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4M2E1MmQ3YzI4NTNiOWRlMDY2YWFiNDdlNWYzMDNjNSIsIm5iZiI6MTc0MzM0NTEzMy45NDksInN1YiI6IjY3ZTk1NWVkMmNjYTZmYzhmYmM2YmUxNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.u3olDlLJQMRyr9WKiQ-qqfsYkI_u759xVlyLHkyGt-w',
+        'Accept' => 'application/json',
     ]
 ]);
-
 
 echo $response->getBody();
 ?>
