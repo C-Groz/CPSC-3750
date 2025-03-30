@@ -4,8 +4,12 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
     const query = document.getElementById('movieQuery').value;
     const numMovies = document.getElementById('numMovies').value;
 
-    if(numMovies == null){
+    if(numMovies == null || numMovies < 0){
         numMovies = 1;
+    }
+
+    if(numMovies >= 100){
+        numMovies = 100;
     }
 
     fetch(`fetchMovies.php?query=${encodeURIComponent(query)}`)

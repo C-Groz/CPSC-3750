@@ -88,3 +88,22 @@ p {
     font-size: 13pt;
     color: black;
 }
+
+/* nav */
+
+#nav-container {
+    display: flex; 
+    justify-content: center; 
+    background-color: #000000;
+    padding: 10px 0;
+}
+
+#nav-container a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+#info {
+    text-align: center;
+}
