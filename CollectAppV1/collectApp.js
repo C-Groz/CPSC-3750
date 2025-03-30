@@ -6,6 +6,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
     fetch(`fetchMovies.php?query=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             let resultsDiv = document.getElementById('results');
             resultsDiv.innerHTML = ""; 
 
