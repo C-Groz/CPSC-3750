@@ -23,9 +23,6 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     let movieElement = document.createElement('li');
                     movieElement.textContent = `${movie.title} `;
 
-                    let showDetailsButton = document.createElement('button');
-                    showDetailsButton.textContent = "More Info"; 
-
                     let detailsContainer = document.createElement('div');
                     detailsContainer.style.display = 'none';
                     detailsContainer.className = "details";
@@ -33,6 +30,9 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     let detailsText = document.createElement('p');
                     detailsText.innerHTML = "Overview:" + (movie.overview || "No description available.") + "<br>Release Date: " + (movie.release_date || "No release date available.") + "<br>Popularity: " + (movie.popularity || "No popularity available.");
                     detailsContainer.appendChild(detailsText);
+
+                    let showDetailsButton = document.createElement('button');
+                    showDetailsButton.textContent = "More Info"; 
 
                     showDetailsButton.addEventListener('click', function(){
                         if(detailsContainer.style.display == 'none'){
@@ -43,8 +43,8 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                         }
                     });
                     
-                    movieElement.appendChild(showDetailsButton);
                     movieElement.appendChild(detailsContainer);
+                    movieElement.appendChild(showDetailsButton);
                     resultsDiv.appendChild(movieElement);
             }
             }else{
