@@ -20,6 +20,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     let movie = data.results[i];
                     let movieElement = document.createElement('li');
                     movieElement.textContent = `${movie.title}`;
+                    movieElement += document.createElement('button');
                     resultsDiv.appendChild(movieElement);
             }
             }else{
