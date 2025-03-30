@@ -43,9 +43,9 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                         }
                     });
                     
-                    movieElement.appendChild(detailsContainer);
+                    movieElement.appendChild(showDetailsButton);
                     resultsDiv.appendChild(movieElement);
-                    resultsDiv.appendChild(showDetailsButton);
+                    resultsDiv.appendChild(detailsContainer);
             }
             }else{
                 resultsDiv.innerHTML = "<p>No movies found.</p>";
