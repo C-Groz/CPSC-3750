@@ -44,8 +44,8 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     });
                     
                     movieElement.appendChild(detailsContainer);
-                    movieElement.appendChild(showDetailsButton);
                     resultsDiv.appendChild(movieElement);
+                    resultsDiv.appendChild(showDetailsButton);
             }
             }else{
                 resultsDiv.innerHTML = "<p>No movies found.</p>";
