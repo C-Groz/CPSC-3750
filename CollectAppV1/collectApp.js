@@ -36,6 +36,8 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     showDetailsButton.addEventListener('click', function(){
                         if(detailsContainer.style.display == 'none'){
                             detailsContainer.style.display = 'block'; 
+                        }
+                        else{
                             detailsContainer.style.display = 'none'; 
                         }
                     });
