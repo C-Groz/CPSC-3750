@@ -25,10 +25,10 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     showDetailsButton.textContent = "More Info"; 
 
                     let detailsContainer = document.createElement('div');
-                    //detailsContainer.style.display = 'none';
+                    detailsContainer.style.display = 'none';
 
                     let detailsText = document.createElement('p');
-                    detailsText.textContent = movie.overview || "No description available.";
+                    detailsText.textContent += "Overview:\n" + movie.overview || "No description available." + "\nRelease Date: " + movie.release_date || "No release date available." + "\nPopularity: " + movie.popularity || "No popularity available.";
                     detailsContainer.appendChild(detailsText);
 
                     showDetailsButton.addEventListener('click', function(){
