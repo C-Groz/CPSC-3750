@@ -31,14 +31,14 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     detailsText.textContent = movie.overview || "No description available.";
                     detailsContainer.appendChild(detailsText);
 
-                    showDescriptionButton.addEventListener('click', function(){
-                        if(descriptionContainer.style.display === 'none'){
-                            descriptionContainer.style.display = 'block'; 
-                            descriptionContainer.style.display = 'none'; 
+                    showDetailsButton.addEventListener('click', function(){
+                        if(detailsContainer.style.display === 'none'){
+                            detailsContainer.style.display = 'block'; 
+                            detailsContainer.style.display = 'none'; 
                         }
                     });
                     
-                    movieElement.appendChild(showDescriptionButton);
+                    movieElement.appendChild(showDetailsButton);
                     resultsDiv.appendChild(movieElement);
             }
             }else{
