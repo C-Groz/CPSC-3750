@@ -17,6 +17,8 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
 
             if(data.results && data.results.length > 0){
                 for(var i = 0; i < numMovies; i++){
+                    if(data.results[i] == null)
+                        break;
                     let movie = data.results[i];
                     let movieElement = document.createElement('li');
                     movieElement.textContent = `${movie.title} `;
