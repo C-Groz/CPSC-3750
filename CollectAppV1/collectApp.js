@@ -30,7 +30,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     detailsContainer.style.display = 'none';
 
                     let detailsText = document.createElement('p');
-                    detailsText.textContent += "Overview:\n" + (movie.overview || "No description available.") + "\nRelease Date: " + (movie.release_date || "No release date available.") + "\nPopularity: " + (movie.popularity || "No popularity available.");
+                    detailsText.htmlContent += "Overview:" + (movie.overview || "No description available.") + "<br>Release Date: " + (movie.release_date || "No release date available.") + "<br>Popularity: " + (movie.popularity || "No popularity available.");
                     detailsContainer.appendChild(detailsText);
 
                     showDetailsButton.addEventListener('click', function(){
