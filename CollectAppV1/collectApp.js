@@ -15,14 +15,14 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
             let resultsDiv = document.getElementById('results');
             resultsDiv.innerHTML = ""; 
 
-            if (data.results && data.results.length > 0) {
+            if(data.results && data.results.length > 0){
                 for(var i = 0; i < numMovies; i++){
                     let movie = data.results[i];
-                    let movieElement = document.createElement('p');
-                    movieElement.textContent = `${movie.title} (${movie.release_date})`;
+                    let movieElement = document.createElement('li');
+                    movieElement.textContent = `${movie.title}`;
                     resultsDiv.appendChild(movieElement);
             }
-            } else {
+            }else{
                 resultsDiv.innerHTML = "<p>No movies found.</p>";
             }
         })
