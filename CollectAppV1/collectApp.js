@@ -19,7 +19,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                 for(var i = 0; i < numMovies; i++){
                     let movie = data.results[i];
                     let movieElement = document.createElement('li');
-                    movieElement.textContent = `${movie.title}`;
+                    movieElement.textContent = `${movie.title} `;
 
                     let showDetailsButton = document.createElement('button');
                     showDetailsButton.textContent = "More Info"; 
@@ -32,7 +32,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     detailsContainer.appendChild(detailsText);
 
                     showDetailsButton.addEventListener('click', function(){
-                        if(detailsContainer.style.display === 'none'){
+                        if(detailsContainer.style.display == 'none'){
                             detailsContainer.style.display = 'block'; 
                             detailsContainer.style.display = 'none'; 
                         }
