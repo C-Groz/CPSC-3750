@@ -20,7 +20,25 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     let movie = data.results[i];
                     let movieElement = document.createElement('li');
                     movieElement.textContent = `${movie.title}`;
-                    movieElement += document.createElement('button');
+
+                    let showDetailsButton = document.createElement('button');
+                    showDetailsButton.textContent = "More Info"; 
+
+                    let detailsContainer = document.createElement('div');
+                    detailsContainer.style.display = 'none';
+
+                    let detailsText = document.createElement('p');
+                    detailsText.textContent = movie.overview || "No description available.";
+                    detailsContainer.appendChild(detailsText);
+
+                    showDescriptionButton.addEventListener('click', function(){
+                        if(descriptionContainer.style.display === 'none'){
+                            descriptionContainer.style.display = 'block'; 
+                            descriptionContainer.style.display = 'none'; 
+                        }
+                    });
+                    
+                    movieElement.appendChild(showDescriptionButton);
                     resultsDiv.appendChild(movieElement);
             }
             }else{
