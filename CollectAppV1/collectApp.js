@@ -25,7 +25,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     showDetailsButton.textContent = "More Info"; 
 
                     let detailsContainer = document.createElement('div');
-                    detailsContainer.style.display = 'none';
+                    //detailsContainer.style.display = 'none';
 
                     let detailsText = document.createElement('p');
                     detailsText.textContent = movie.overview || "No description available.";
