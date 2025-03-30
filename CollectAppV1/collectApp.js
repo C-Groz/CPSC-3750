@@ -28,6 +28,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
 
                     let detailsContainer = document.createElement('div');
                     detailsContainer.style.display = 'none';
+                    detailsContainer.className = "details";
 
                     let detailsText = document.createElement('p');
                     detailsText.innerHTML = "Overview:" + (movie.overview || "No description available.") + "<br>Release Date: " + (movie.release_date || "No release date available.") + "<br>Popularity: " + (movie.popularity || "No popularity available.");
