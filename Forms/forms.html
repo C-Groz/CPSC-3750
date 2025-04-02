@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Group: Forms</title>
+  </head>
+  <script>
+    fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+  </script>
+  <body>
+    <h1>Group Assignment: Forms</h1>
+    <p>Author: Charlie Grozier</p>
+
+    <div class="container">
+      <form name="form" method="POST" action="forms.php" enctype="multipart/form-data">
+        <h2>Form:</h2>
+        <label>Text:</label><br>
+        <input type="text" name="text" size="20"><br>
+        <label>Text Area:</label><br>
+        <input type="textarea" name="textarea" size="20"><br>
+        <label>Hidden</label><br>
+        <input type="hidden" name="hidden" size="20"><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" size="20"><br>
+        <label>Check Boxes:</label><br>
+        <input type="checkbox" name="checkbox1" size="20"><br>
+        <input type="checkbox" name="checkbox2" size="20"><br>
+        <input type="checkbox" name="checkbox3" size="20"><br>
+        <label>Radio Buttons:</label><br>
+        <input type="radio" name="radio" size="20"><br>
+        <label>Selection List:</label><br>
+        <select name="select">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select><br>
+        <label>file:</label><br>
+        <input type="file" name="file" size="20"><br>
+        <label>url:</label><br>
+        <input type="url" name="url" size="20"><br>
+
+        <input type="submit" name="submit" value="Submit" onclick="newCard();"><br>
+      </form>
+    </div>
+    
+    <style>
+      html, body {
+        padding-top: 25px;
+      }
+      h1{
+        text-align: center;
+      }
+    </style>
+</body>
+</html>
