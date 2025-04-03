@@ -45,7 +45,14 @@ mysqli_close($link);
             .then(response => response.text())
             .then(data => document.body.insertAdjacentHTML("afterbegin", data));
     </script>
-
+    <style>
+      html, body {
+        padding-top: 25px;
+      }
+      h1{
+        text-align: center;
+      }
+    </style>
     <ul>
         <?php foreach ($people as $id => $name): ?>
             <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=<?= urlencode($id) ?>"><?= htmlspecialchars($name) ?></a></li>
