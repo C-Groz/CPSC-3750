@@ -3,10 +3,10 @@
 require_once 'config.php';
 
 $link = mysqli_connect(
-    $dbConfig['host'],
-    $dbConfig['username'],
-    $dbConfig['passwd'],
-    $dbConfig['dbname']
+    $dbConfig['localhost'],
+    $dbConfig['u461793670_Charlie'],
+    $dbConfig['DatabasePW123'],
+    $dbConfig['u461793670_database']
 );
 
 if (isset($_POST['person'])) {
