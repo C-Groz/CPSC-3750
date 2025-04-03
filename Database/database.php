@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config.php';
+//require_once 'config.php';
 
 $link = mysqli_connect(
     $dbConfig['localhost'],
@@ -30,7 +30,7 @@ mysqli_close($link);
 ?>
 <!DOCTYPE html>
 <head>
-<title>People</title>
+    <title>People</title>
 </head>
 <script>
     fetch("../navbar.html")
@@ -38,17 +38,17 @@ mysqli_close($link);
       .then(data => document.body.insertAdjacentHTML("afterbegin", data));
 </script>
 <body>
-<ul>
-<? foreach ($people as $id => $name): ?>
-<li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=<?= urlencode($id) ?>"><?= htmlspecialchars($name) ?></a></li>
-<? endforeach; ?>
-</ul>
-<form method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
-<dl>
-<dt>Add person</dt>
-<dd><input type="text" name="person" /></dd>
-</dl>
-<input type="submit" name="submit" value="Submit" />
-</form>
+    <ul>
+        <? foreach ($people as $id => $name): ?>
+            <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=<?= urlencode($id) ?>"><?= htmlspecialchars($name) ?></a></li>
+        <? endforeach; ?>
+    </ul>
+    <form method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
+        <dl>
+            <dt>Add person</dt>
+            <dd><input type="text" name="person" /></dd>
+        </dl>
+        <input type="submit" name="submit" value="Submit" />
+    </form>
 </body>
 </html>
