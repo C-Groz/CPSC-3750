@@ -9,6 +9,10 @@ $link = mysqli_connect(
     $dbConfig['u461793670_database']
 );
 
+if (!$link) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 if (isset($_POST['person'])) {
     // filter input
     $person = mysqli_real_escape_string($link, $_POST['person']);
