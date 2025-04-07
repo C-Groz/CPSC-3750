@@ -8,18 +8,12 @@ $link = mysqli_connect(
     $dbConfig['dbname']
 );
 
-if (!$link) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Handle form submission
 if (isset($_POST['person'])) {
     $person = mysqli_real_escape_string($link, $_POST['person']);
     $sql = "INSERT INTO person (name) VALUES ('" . $person . "')";
     mysqli_query($link, $sql);
 }
 
-// Fetch people from the database
 $sql = 'SELECT person_id, name FROM person';
 $people = array();
 
