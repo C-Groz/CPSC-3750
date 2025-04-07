@@ -47,11 +47,8 @@ mysqli_close($link);
         text-align: center;
       }
     </style>
-    <ul>
-        <?php foreach ($people as $id => $name): ?>
-            <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=<?= urlencode($id) ?>"><?= htmlspecialchars($name) ?></a></li>
-        <?php endforeach; ?>
-    </ul>
+
+    <h1>Simple Database</h1>
 
     <form method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
         <dl>
@@ -60,5 +57,11 @@ mysqli_close($link);
         </dl>
         <input type="submit" name="submit" value="Submit" />
     </form>
+    <h2>Database Items:</h2>
+    <ul>
+        <?php foreach ($people as $id => $name): ?>
+            <li><?= $_SERVER['PHP_SELF'] ?><?= htmlspecialchars($name) ?></li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 </html>
