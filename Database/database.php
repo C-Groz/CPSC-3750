@@ -59,8 +59,8 @@ mysqli_close($link);
     </form>
     <h2>Database Items:</h2>
     <ul>
-        <?php foreach ($people as $id => $name): ?>
-            <li><?= $_SERVER['PHP_SELF'] ?><?= htmlspecialchars($name) ?></li>
+        <?php foreach ($people as $name): ?>
+            <li><?= htmlspecialchars($name) ?></li>
         <?php endforeach; ?>
     </ul>
 </body>
