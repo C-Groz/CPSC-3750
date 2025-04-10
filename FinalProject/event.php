@@ -6,18 +6,17 @@
 <body>
   <h1>Show/Add Events</h1>
   <?php
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
-	?>
-  <?php
-	session_start();
-
-	if(!isset($_SESSION['user_id'])){
-		echo "You must be logged in to add an event.";
-		exit;
-	}
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  session_start();
+  if(!isset($_SESSION['user_id'])){
+	echo "You must be logged in to add an event.";
+	exit;
+  }
 
   $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
+
+  $user_id = $_SESSION['user_id'];
 
   //add any new event
   if ($_POST) {
@@ -32,7 +31,7 @@
 
 	$event_date = $safe_y."-".$safe_m."-".$safe_d." ".$safe_event_time_hh.":".$safe_event_time_mm.":00";
 
-	$insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."')";
+	$insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '"$user_id"')";
 	$insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
 
   } else {
@@ -41,17 +40,24 @@
 	$safe_d = mysqli_real_escape_string($mysqli, $_GET['d']);
 	$safe_y = mysqli_real_escape_string($mysqli, $_GET['y']);
   }
-  
-  // fetch user id
-  $user_id = $_SESSION['user_id'];
+
 
   //show events for this day
-  $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id) VALUES('$safe_event_title', '$safe_event_shortdesc', '$event_date', '$user_id')";
-  $insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
+  $getEvent_sql = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date 
+                   FROM calendar_events 
+                   WHERE month(event_start) = ? 
+                   AND dayofmonth(event_start) = ? 
+                   AND year(event_start) = ? 
+                   AND user_id = ? 
+                   ORDER BY event_start";
+  $stmt = mysqli_prepare($mysqli, $getEvent_sql);
+  mysqli_stmt_bind_param($stmt, 'iiii', $safe_m, $safe_d, $safe_y, $user_id);
+  mysqli_stmt_execute($stmt);
+  $getEvent_res = mysqli_stmt_get_result($stmt);
 
   if(mysqli_num_rows($getEvent_res) > 0){
 	$event_txt = "<ul>";
-	while ($ev = @mysqli_fetch_array($getEvent_res)) {
+	while ($ev = mysqli_fetch_array($getEvent_res)) {
 		$event_title = stripslashes($ev['event_title']);
 		$event_shortdesc = stripslashes($ev['event_shortdesc']);
 		$fmt_date = $ev['fmt_date'];
