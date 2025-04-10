@@ -3,7 +3,7 @@
 </head>
 <style>
     body, html{
-        margin-top: 30px;
+        margin-top: 60px;
     }
 </style>
 <script>
@@ -59,14 +59,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <input type="password" name="password" id="password" required>
     <input type="submit" value="Login">
 </form>
-
-
-<form action="login.php" method="post">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="login">
-</form>
-
 
