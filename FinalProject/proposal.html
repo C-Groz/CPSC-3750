@@ -3,88 +3,96 @@
 <head>
   <title>Proposal</title>
   <style type="text/css">
-    body, html{
+    body,html{
         margin-top: 30px;
     }
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 20px;
+    .container {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
         background-color: #f9f9f9;
         color: #333;
     }
-    h1, h2 {
-        color: #004080;
-    }
-    ul {
-        padding-left: 20px;
+    .content {
+        max-width: 800px;
+        padding: 20px;
+        line-height: 1.6;
     }
     .section {
         margin-bottom: 30px;
+        text-align: left; 
+    }
+    ul {
+        padding-left: 20px;
+        text-align: left; 
     }
     code {
         background-color: #eee;
         padding: 2px 4px;
-        font-family: Consolas, monospace;
-    }  
+    }
   </style>
-  <link rel="stylesheet" href="nav.css">
   <script>
     fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
       .then(response => response.text())
       .then(data => document.body.insertAdjacentHTML("afterbegin", data));
  </script>
 </head>
 <body>
-  <div id="nav-container">
-    <a href="showcalendar_inJS.html" id="calendar">Calendar</a>
-    <a href="proposal.html" id="proposal">Proposal</a>
-    <a href="about.html" id="about">About</a>
-  </div>
-  <h1>Proposal</h1>
-  <h2>CPSC 3750 Web App Development</h2>
-
-    <div class="section">
-        <h3>Team Members</h3>
-        <ul>
+    <div class="container">
+      <div class="content">
+        <h1>Proposal</h1>
+        <h2>CPSC 3750 Web App Development</h2>
+  
+        <div class="section">
+          <h3>Author</h3>
+          <ul>
             <li>Charles Grozier</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Chosen Base App</h3>
-        <p>I selected the Simple Calendar App from the textbook. It includes features such as displaying the dates for any month between 1990 and 2020 and adding custom events.</p>
-    </div>
-
-    <div class="section">
-        <h3>Project Overview</h3>
-        <p>Our application will allow users to [brief description of what the app does, who it's for, and how it will be used].</p>
-    </div>
-
-    <div class="section">
-        <h3>Proposed Enhancements</h3>
-        <p>In addition to implementing the base app, I plan to make the following improvements and changes:</p>
-        <ul>
+          </ul>
+        </div>
+  
+        <div class="section">
+          <h3>Chosen Base App</h3>
+          <p>I selected the Simple Calendar App from the textbook. It includes features such as displaying the dates for any month between 1990 and 2020 and adding custom events.</p>
+        </div>
+  
+        <div class="section">
+          <h3>Project Overview</h3>
+          <p>My application will allow users to register for an account and login to a custom dashboard to:</p>
+          <ul>
+            <li>Add custom events to the calendar, ordered by time/date</li>
+            <li></li>
+          </ul>
+        </div>
+  
+        <div class="section">
+          <h3>Proposed Enhancements</h3>
+          <p>In addition to implementing the base app, I plan to make the following improvements and changes:</p>
+          <ul>
             <li><strong>HTML:</strong> [e.g., Added new forms/pages, improved layout/structure, included semantic HTML]</li>
             <li><strong>CSS:</strong> [e.g., Responsive design using Flexbox or Grid, dark mode toggle, custom styling]</li>
             <li><strong>JavaScript:</strong> [e.g., Form validation, AJAX, interactive components like sliders, modals, etc.]</li>
             <li><strong>PHP:</strong> [e.g., New logic for handling users/posts/comments, added admin dashboard]</li>
             <li><strong>Database:</strong> [e.g., Added tables, extra fields, user roles, search functionality]</li>
             <li><strong>Authentication:</strong> Login/Logout with password hashing</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Timeline</h3>
-        <ul>
+          </ul>
+        </div>
+  
+        <div class="section">
+          <h3>Timeline</h3>
+          <ul>
             <li>Week 1 (due April 08 2PM): Base app implemented, proposal presented</li>
             <li>Week 3 (due April 22 2PM): Complete enhancements, demo to instructor</li>
             <li>Week 4 (due April 27 EOD): Polish UI and prepare for class demo</li>
             <li>Week 5 (due Final Exam): Give a polished demo of your team's app</li>
-        </ul>
+          </ul>
+        </div>
+      </div>
     </div>
-
-</body>
-</html>
+  </body>
+  </html>

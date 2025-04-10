@@ -1,0 +1,69 @@
+<head>
+    <title>Log In</title>
+</head>
+<style>
+    body, html{
+        margin-top: 30px;
+    }
+</style>
+<script>
+    fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
+
+<?php
+session_start();
+
+$mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
+
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+    header("Location: dashboard.php");
+    exit;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    
+    $sql = "SELECT id, username, password FROM users WHERE username = '$username'";
+    $result = mysqli_query($conn, $sql);
+    
+    if($result && mysqli_num_rows($result) > 0){
+        $user = mysqli_fetch_assoc($result);
+        
+        if(password_verify($password, $user['password'])){
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+            header("Location: dashboard.php");
+            exit;
+        }else{
+            echo "Invalid username or password";
+        }
+    }else{
+        echo "Invalid username or password";
+    }
+}
+?>
+
+<form action="login.php" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Login">
+</form>
+
+
+<form action="login.php" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="login">
+</form>
+
+
