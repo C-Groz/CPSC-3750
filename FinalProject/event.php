@@ -48,7 +48,7 @@
                    WHERE month(event_start) = ? 
                    AND dayofmonth(event_start) = ? 
                    AND year(event_start) = ? 
-                   AND user_id = ? 
+                   AND id = ? 
                    ORDER BY event_start";
   $stmt = mysqli_prepare($mysqli, $getEvent_sql);
   mysqli_stmt_bind_param($stmt, 'iiii', $safe_m, $safe_d, $safe_y, $user_id);
