@@ -10,7 +10,7 @@
 	ini_set('display_errors', 1);
 	?>
   <?php
-  $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123", "u461793670_prog_db");
+  $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
 
   //add any new event
   if ($_POST) {
