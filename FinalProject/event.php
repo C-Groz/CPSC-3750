@@ -46,7 +46,7 @@
   $user_id = $_SESSION['user_id'];
 
   //show events for this day
-  $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, user_id) VALUES('$safe_event_title', '$safe_event_shortdesc', '$event_date', '$user_id')";
+  $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id) VALUES('$safe_event_title', '$safe_event_shortdesc', '$event_date', '$user_id')";
   $insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
 
   if(mysqli_num_rows($getEvent_res) > 0){
