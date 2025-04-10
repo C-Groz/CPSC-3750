@@ -31,7 +31,7 @@
 
 	$event_date = $safe_y."-".$safe_m."-".$safe_d." ".$safe_event_time_hh.":".$safe_event_time_mm.":00";
 
-	$insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '"$user_id"')";
+	$insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '".$user_id."')";
 	$insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
 
   } else {
