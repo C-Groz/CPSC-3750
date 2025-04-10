@@ -7,11 +7,10 @@
         margin-top: 30px;
     }
     .container {
-        margin-top: 80px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: fit-content;
         text-align: center;
         background-color: #f9f9f9;
         color: #333;
@@ -50,36 +49,49 @@
         <h2>CPSC 3750 Web App Development</h2>
   
         <div class="section">
-          <h3>Author</h3>
-          <ul>
-            <li>Charles Grozier</li>
-          </ul>
+          <p><strong>Author: </strong>Charlie Grozier</p>
         </div>
   
         <div class="section">
           <h3>Chosen Base App</h3>
-          <p>I selected the Simple Calendar App from the textbook. It includes features such as displaying the dates for any month between 1990 and 2020 and adding custom events.</p>
+          <p>I selected the Simple Calendar App from the textbook. It includes features such as displaying the dates for any month between 1990 and 2020 and adding/viewing custom events.</p>
         </div>
   
         <div class="section">
-          <h3>Project Overview</h3>
-          <p>My application will allow users to register for an account and login to a custom dashboard to:</p>
+          <h3>Proposed Project Overview</h3>
+          <p>My application will allow users to register for an account and login to:</p>
           <ul>
-            <li>Add custom events to the calendar, ordered by time/date</li>
-            <li></li>
+            <li>Add custom events to the calendar and view them ordered by time/date</li>
+            <li>Edit events</li>
+            <li>Create categories of events</li>
+            <li>Create reoccuring events</li>
+            <li>View the calendar based on years, months, or weeks</li>
+            <li>Search events</li>
+            <li>Upload files to events (eg. photos/text files)</li>
+            <li>View a user profile page which shows:</li>
+              <ul>
+                <li>User information</li>
+                <li>Upcoming events</li>
+                <li>User statistics</li>
+              </ul>
+          </ul>
+          <p>Additionally, it will contain an admin dashboard which:</p>
+          <ul>
+            <li>Shows information on all users of the system</li>
+            <li>Allows for deletion of users</li>
           </ul>
         </div>
   
         <div class="section">
-          <h3>Proposed Enhancements</h3>
-          <p>In addition to implementing the base app, I plan to make the following improvements and changes:</p>
+          <h3>Enhancements</h3>
+          <p>In order to acheive the proposed project above, I will enhance the following:</p>
           <ul>
-            <li><strong>HTML:</strong> [e.g., Added new forms/pages, improved layout/structure, included semantic HTML]</li>
-            <li><strong>CSS:</strong> [e.g., Responsive design using Flexbox or Grid, dark mode toggle, custom styling]</li>
-            <li><strong>JavaScript:</strong> [e.g., Form validation, AJAX, interactive components like sliders, modals, etc.]</li>
-            <li><strong>PHP:</strong> [e.g., New logic for handling users/posts/comments, added admin dashboard]</li>
-            <li><strong>Database:</strong> [e.g., Added tables, extra fields, user roles, search functionality]</li>
-            <li><strong>Authentication:</strong> Login/Logout with password hashing</li>
+            <li><strong>HTML:</strong> Improved layout, create additional pages(admin dashboard, user profile)</li>
+            <li><strong>CSS:</strong> Responsive design, dark mode toggle, consistent styling, enhanced UI for admin dashboard/user profiles</li>
+            <li><strong>JavaScript:</strong> Form validation, AJAX for searching and updating calendar w/o refresh, new calendar views (day, month, year)</li>
+            <li><strong>PHP:</strong> Develop functionality for editing, searching, viewing, and deleting events, add functionality for reocurring events, add functionality for admin dashboard and user profiles, update to use dates past 2020</li>
+            <li><strong>Database:</strong> Add search functionality, allow file uploads, deletion of users, queries for user stats, add column for user role</li>
+            <li><strong>Authentication:</strong> Login/Logout with password hashing, role creation (user/admin)</li>
           </ul>
         </div>
   
