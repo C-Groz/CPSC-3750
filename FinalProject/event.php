@@ -6,6 +6,10 @@
 <body>
   <h1>Show/Add Events</h1>
   <?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	?>
+  <?php
   $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123", "u461793670_prog_db");
 
   //add any new event
