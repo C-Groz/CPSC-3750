@@ -16,6 +16,9 @@
 </script>
 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 
 $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
@@ -26,11 +29,11 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $username = mysqli_real_escape_string($mysqli, $_POST['username']);
+    $password = mysqli_real_escape_string($mysqli, $_POST['password']);
     
     $sql = "SELECT id, username, password FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($mysqli, $sql);
     
     if($result && mysqli_num_rows($result) > 0){
         $user = mysqli_fetch_assoc($result);
