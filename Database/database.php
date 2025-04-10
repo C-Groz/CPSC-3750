@@ -53,9 +53,9 @@ mysqli_close($link);
     <form method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
         <dl>
             <dt>Add person</dt>
-            <dd><input type="text" name="person" required /></dd>
+            <dd><input type="text" name="person" required/></dd>
         </dl>
-        <input type="submit" name="submit" value="Submit" />
+        <input type="submit" name="submit" value="Submit"/>
     </form>
     <h2>Database Items:</h2>
     <ul>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About</title>
+  <style type="text/css">
+  body, html{
+    margin-top: 30px;
+  }
+  h1{
+    text-align: center;
+  }
+  </style>
+  <link rel="stylesheet" href="nav.css">
+  <script>
+    fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+ </script>
+</head>
+<body>
+  <div id="nav-container">
+    <a href="showcalendar_inJS.html" id="calendar">Calendar</a>
+    <a href="proposal.html" id="proposal">Proposal</a>
+    <a href="about.html" id="about">About</a>
+  </div>
+  <h1>About</h1>
+</body>
+</html>
