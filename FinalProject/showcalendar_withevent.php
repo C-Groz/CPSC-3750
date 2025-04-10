@@ -1,5 +1,8 @@
 <?php
 define("ADAY", (60*60*24));
+if (!isset($_SESSION['user_id'])) {
+  die("User not logged in. Please log in.");
+}
 if ((!isset($_POST['month'])) || (!isset($_POST['year']))) {
 	$nowArray = getdate();
 	$month = $nowArray['mon'];
@@ -11,6 +14,7 @@ if ((!isset($_POST['month'])) || (!isset($_POST['year']))) {
 
 $start = mktime (12, 0, 0, $month, 1, $year);
 $firstDayArray = getdate($start);
+$user_id = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -84,15 +88,20 @@ $firstDayArray = getdate($start);
 	  } else {
 		 $event_title = "";
      $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
-		 $chkEvent_sql = "SELECT event_title FROM calendar_events WHERE
-						  month(event_start) = '".$month."' AND
-						  dayofmonth(event_start) = '".$dayArray['mday']."'
-						  AND year(event_start) = '".$year."' ORDER BY event_start";
-		 $chkEvent_res = mysqli_query($mysqli, $chkEvent_sql)
-						 or die(mysqli_error($mysqli));
+		 $getEvent_sql = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date 
+                             FROM calendar_events 
+                             WHERE month(event_start) = ? 
+                             AND dayofmonth(event_start) = ? 
+                             AND year(event_start) = ? 
+                             AND user_id = ? 
+                             ORDER BY event_start";
+     $stmt = mysqli_prepare($mysqli, $getEvent_sql);
+     mysqli_stmt_bind_param($stmt, 'iiii', $month, $dayArray['mday'], $year, $user_id);
+     mysqli_stmt_execute($stmt);
+     $result = mysqli_stmt_get_result($stmt);
 
-		 if (mysqli_num_rows($chkEvent_res) > 0) {
-			  while ($ev = mysqli_fetch_array($chkEvent_res)) {
+		 if (mysqli_num_rows($result) > 0) {
+			  while ($ev = mysqli_fetch_array($result)) {
 				   $event_title .= stripslashes($ev['event_title'])."<br>";
 			  }
 		 } else {

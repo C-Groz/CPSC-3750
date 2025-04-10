@@ -10,6 +10,13 @@
 	ini_set('display_errors', 1);
 	?>
   <?php
+	session_start();
+
+	if(!isset($_SESSION['user_id'])){
+		echo "You must be logged in to add an event.";
+		exit;
+	}
+
   $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
 
   //add any new event
@@ -34,12 +41,15 @@
 	$safe_d = mysqli_real_escape_string($mysqli, $_GET['d']);
 	$safe_y = mysqli_real_escape_string($mysqli, $_GET['y']);
   }
+  
+  // fetch user id
+  $user_id = $_SESSION['user_id'];
 
   //show events for this day
-  $getEvent_sql = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date FROM calendar_events WHERE month(event_start) = '".$safe_m."' AND dayofmonth(event_start) = '".$safe_d."' AND year(event_start) = '".$safe_y."' ORDER BY event_start";
-  $getEvent_res = mysqli_query($mysqli, $getEvent_sql) or die(mysqli_error($mysqli));
+  $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, user_id) VALUES('$safe_event_title', '$safe_event_shortdesc', '$event_date', '$user_id')";
+  $insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
 
-  if (mysqli_num_rows($getEvent_res) > 0) {
+  if(mysqli_num_rows($getEvent_res) > 0){
 	$event_txt = "<ul>";
 	while ($ev = @mysqli_fetch_array($getEvent_res)) {
 		$event_title = stripslashes($ev['event_title']);
@@ -50,7 +60,7 @@
 	}
 	$event_txt .= "</ul>";
 	mysqli_free_result($getEvent_res);
-  } else {
+  }else{
 	$event_txt = "";
   }
 
