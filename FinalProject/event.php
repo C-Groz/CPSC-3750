@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Show/Add Events</title>
+</head>
 <body>
   <h1>Show/Add Events</h1>
   <?php
