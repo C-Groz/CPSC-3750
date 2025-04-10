@@ -3,7 +3,7 @@
 </head>
 <style>
     body, html{
-        margin-top: 60px;
+        margin-top: 30px;
     }
 </style>
 <script>
