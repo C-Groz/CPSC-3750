@@ -50,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-<form action="register.php" method="post">
+<form id="pwForm" action="register.php" method="post">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required>
     <label for="password">Password:</label>
