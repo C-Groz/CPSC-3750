@@ -35,12 +35,11 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     detailsText.innerHTML = "Overview: " + (movie.overview || "No description available.") + "<br>Release Date: " + (movie.release_date || "No release date available.") + "<br>Popularity: " + (movie.popularity || "No popularity available.");
                     detailsContainer.appendChild(detailsText);
 
+                    let buttonContainer = document.createElement('div');
+
+
                     let showDetailsButton = document.createElement('button');
                     showDetailsButton.textContent = "More Info"; 
-
-                    let saveButton = document.createElement('button');
-                    saveButton.textContent = "Save"; 
-                    saveButton.addEventListener('click', saveToCollection())
 
                     showDetailsButton.addEventListener('click', function(){
                         if(detailsContainer.style.display == 'none'){
@@ -50,9 +49,14 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                             detailsContainer.style.display = 'none'; 
                         }
                     });
+
+                    let saveButton = document.createElement('button');
+                    saveButton.textContent = "Save"; 
+                    saveButton.addEventListener('click', saveToCollection())
                     
-                    movieElement.appendChild(showDetailsButton);
-                    movieElement.appendChild(saveButton);
+                    movieElement.appendChild(buttonContainer);
+                    buttonContainer.appendChild(showDetailsButton);
+                    buttonContainer.appendChild(saveButton);
                     resultsDiv.appendChild(movieElement);
                     resultsDiv.appendChild(detailsContainer);
             }
