@@ -52,7 +52,9 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
 
                     let saveButton = document.createElement('button');
                     saveButton.textContent = "Save"; 
-                    saveButton.addEventListener('click', saveToCollection);
+                    saveButton.addEventListener('click', function(){
+                        saveToCollection(movie);
+                    });
                     
                     movieElement.appendChild(buttonContainer);
                     buttonContainer.appendChild(showDetailsButton);
@@ -68,5 +70,18 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
 });
 
 function saveToCollection(){
-    console.log("saved");
+    fetch('saveMovie.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(movie) 
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+    })
+    .catch(error => {
+        console.error('Error saving movie:', error);
+    });
 }
