@@ -23,7 +23,17 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 }
 ?>
 
+<body>
 <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
-<p>Here's your personalized calendar:</p>
-
 <a href="logout.php">Log Out</a>
+
+<h1>Search for a Movie</h1>
+
+<form id="movieForm">
+    <input type="text" id="movieQuery" placeholder="Enter movie name">
+    <input type="number" id="numMovies" placeholder="Enter amount of movies to retrieve">
+    <button type="submit">Search</button>
+</form>
+<div id="results"></div>
+<script type="text/javascript" src="collectApp.js"></script>
+</body>
