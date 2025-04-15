@@ -24,4 +24,6 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 ?>
 
 <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
+<p>Here's your personalized calendar:</p>
 
+<a href="logout.php">Log Out</a>
