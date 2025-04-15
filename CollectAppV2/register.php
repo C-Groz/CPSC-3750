@@ -50,6 +50,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+<h1>Create An Account</h1>
+
 <form id="pwForm" action="register.php" method="post">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required>

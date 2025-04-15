@@ -54,6 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+<h1>Log In</h1>
+
 <form id="pwForm" action="login.php" method="post">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required>
