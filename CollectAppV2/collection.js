@@ -25,7 +25,7 @@ function displayMovies(movies){
         detailsContainer.className = "details";
 
         let detailsText = document.createElement('p');
-        detailsText.innerHTML = "Overview: " + (movie.overview || "No description available.") + "<br>Release Date: " + (movie.release_date || "No release date available.") + "<br>Popularity: " + (movie.popularity || "No popularity available.");
+        detailsText.innerHTML = "Overview: " + (movie.overview || "No description available.") + "<br>Release Date: " + (movie.release_date || "No release date available.") + "<br>Popularity: " + (movie.popularity || "No timestamp available.") + "<br>Date Saved: " + (movie.created_at || "No popularity available.");
         detailsContainer.appendChild(detailsText);
 
         let buttonContainer = document.createElement('div');
