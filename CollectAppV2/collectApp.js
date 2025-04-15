@@ -52,7 +52,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
 
                     let saveButton = document.createElement('button');
                     saveButton.textContent = "Save"; 
-                    saveButton.addEventListener('click', saveToCollection())
+                    saveButton.addEventListener('click', saveToCollection);
                     
                     movieElement.appendChild(buttonContainer);
                     buttonContainer.appendChild(showDetailsButton);
