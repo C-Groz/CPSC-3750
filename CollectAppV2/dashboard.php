@@ -14,6 +14,7 @@
         .then(response => response.text())
         .then(data => document.body.insertAdjacentHTML("afterbegin", data));
 </script>
+<link rel="stylesheet" href="collectApp.css">
 <?php
 session_start();
 
