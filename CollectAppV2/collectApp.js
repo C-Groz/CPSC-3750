@@ -69,7 +69,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
         .catch(error => console.error('Error fetching movies:', error));
 });
 
-function saveToCollection(){
+function saveToCollection(movie){
     fetch('saveMovie.php', {
         method: 'POST',
         headers: {
