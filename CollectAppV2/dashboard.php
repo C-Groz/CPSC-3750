@@ -26,8 +26,6 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
 <body>
 <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
-<a href="logout.php">Log Out</a>
-
 <h1>Search for a Movie</h1>
 
 <form id="movieForm">
