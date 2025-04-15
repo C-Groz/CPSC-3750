@@ -26,6 +26,6 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
 
 <body>
     <h1><?php echo $_SESSION['username']; ?>'s Collection</h1>
-    <ul id="collectionResults"></ul>
+    <ul id="results"></ul>
     <script src="collection.js"></script>
 </body>

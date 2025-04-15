@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function displayMovies(movies){
-    let resultsDiv = document.getElementById('collectionResults');
+    let resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = "";
 
-    if(movies.length === 0){
+    if(movies.length == 0){
         resultsDiv.innerHTML = "<p>No Movies in collection.</p>";
         return;
     }
