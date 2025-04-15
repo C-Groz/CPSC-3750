@@ -29,7 +29,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = mysqli_real_escape_string($mysqli, $_POST['username']);
     $password = mysqli_real_escape_string($mysqli, $_POST['password']);
     

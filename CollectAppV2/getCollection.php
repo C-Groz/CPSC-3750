@@ -13,10 +13,10 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT id, title, overview, release_date, popularity, created_at FROM saved_movies WHERE user_id = ? ORDER BY created_at DESC";
-$stmt = $mysqli->prepare($sql);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
+$statement = $mysqli->prepare($sql);
+$statement->bind_param("i", $user_id);
+$statement->execute();
+$result = $statement->get_result();
 
 $movies = [];
 while($row = $result->fetch_assoc()){

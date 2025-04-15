@@ -17,13 +17,12 @@ if($movie_id === null){
 
 //delete from db based on movie ID
 $sql = "DELETE FROM saved_movies WHERE id = ? AND user_id = ?";
-$stmt = $mysqli->prepare($sql);
-$stmt->bind_param("ii", $movie_id, $user_id);
+$statement = $mysqli->prepare($sql);
+$statement->bind_param("ii", $movie_id, $user_id);
 
-if($stmt->execute()){
-    echo "Movie deleted.";
+if($statement->execute()){
+    echo "Movie deleted";
 }else{
-    http_response_code(500);
-    echo "Failed to delete movie.";
+    echo "Failed to delete movie";
 }
 ?>
