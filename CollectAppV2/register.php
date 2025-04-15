@@ -6,6 +6,7 @@
         margin-top: 30px;
     }
 </style>
+<link rel="stylesheet" href="collectApp.css">
 <script>
     fetch("../navbar.html")
         .then(response => response.text())
