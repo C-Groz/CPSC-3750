@@ -38,6 +38,10 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     let showDetailsButton = document.createElement('button');
                     showDetailsButton.textContent = "More Info"; 
 
+                    let saveButton = document.createElement('button');
+                    saveButton.textContent = "Save"; 
+                    saveButton.addEventListener('click', saveToCollection())
+
                     showDetailsButton.addEventListener('click', function(){
                         if(detailsContainer.style.display == 'none'){
                             detailsContainer.style.display = 'block'; 
@@ -48,6 +52,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
                     });
                     
                     movieElement.appendChild(showDetailsButton);
+                    movieElement.appendChild(saveButton);
                     resultsDiv.appendChild(movieElement);
                     resultsDiv.appendChild(detailsContainer);
             }
@@ -57,3 +62,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
         })
         .catch(error => console.error('Error fetching movies:', error));
 });
+
+function saveToCollection(){
+    console.log("saved");
+}
