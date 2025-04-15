@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Collect App - Search</title>
+    <link rel="stylesheet" href="collectApp.css">
+   </head>
+   <style>
+      body, html{
+        margin-top: 30px;
+      }
+   </style>
+
+   <script>
+      fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+      fetch("nav.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+   </script>
+   <body>
+    <h1>Search for a Movie</h1>
+
+    <form id="movieForm">
+        <input type="text" id="movieQuery" placeholder="Enter movie name">
+        <input type="number" id="numMovies" placeholder="Enter amount of movies to retrieve">
+        <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
+    <script type="text/javascript" src="collectApp.js"></script>
+</body>
+</html>

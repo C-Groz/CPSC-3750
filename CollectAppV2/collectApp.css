@@ -1,0 +1,109 @@
+
+body {
+    background-color: #f4f4f9;
+    color: black;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24pt;
+    margin-bottom: 20px;
+    color: black;
+}
+
+#movieForm {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#movieQuery, #numMovies {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 12pt;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#results {
+    list-style-type: none;
+    margin-top: 30px;
+}
+
+#results li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#results li:hover {
+    background-color: #ecf0f1;
+}
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: green;
+}
+
+button.showDetails {
+    background-color: green;
+}
+
+button.showDetails:hover {
+    background-color: rgb(0, 110, 0);
+}
+
+.details {
+    margin: 20px;
+    padding: 5px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+}
+
+p {
+    font-size: 13pt;
+    color: black;
+}
+
+/* nav */
+
+#nav-container {
+    display: flex; 
+    justify-content: center; 
+    background-color: #000000;
+    padding: 10px 0;
+}
+
+#nav-container a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+#info {
+    text-align: center;
+}

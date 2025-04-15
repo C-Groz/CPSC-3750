@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Collect App</title>
+    <link rel="stylesheet" href="collectApp.css">
+    </head>
+    <style>
+      body, html{
+        margin-top: 30px;
+      }
+    </style>
+
+    <script>
+      fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+      fetch("nav.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    </script>
+    <body>
+      <h1>Welcome to the Movie API Search App</h1>
+      <p id="info">Navigate to search tab to search through the The Movie Database (TMDB) for your favorite movies!</p>
+      <p id="info">Navigate to the about tab to learn more about the API powering this site</p>
+    </body>
+    <script type="text/javascript" src="collectApp.js"></script>
+</html>

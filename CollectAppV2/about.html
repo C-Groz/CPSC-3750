@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Collect App - About</title>
+    <link rel="stylesheet" href="collectApp.css">
+    </head>
+    <style>
+        body, html{
+            margin-top: 30px;
+        }
+    </style>
+
+    <script>
+      fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+      fetch("nav.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    </script>
+    <body>
+        <h1>About</h1>
+        <p id="info">API Documentation: <a href="https://www.themoviedb.org">TMDB</a></p>
+        <p id="info">Number of movies: 1,041,320</p>
+        <script type="text/javascript" src="collectApp.js"></script>
+    </body>
+</html>
