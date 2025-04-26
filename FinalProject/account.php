@@ -1,11 +1,4 @@
-<script>
-    fetch("../navbar.html")
-        .then(response => response.text())
-        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
-    fetch("nav.html")
-        .then(response => response.text())
-        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
-</script>
+
 
 <?php
 error_reporting(E_ALL);
@@ -83,6 +76,14 @@ mysqli_close($mysqli);
         }
     </style>
 </head>
+<script>
+    fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
 <body>
 
     <h1>Welcome, <?php echo htmlspecialchars($user['username']); ?>!</h1>
