@@ -29,6 +29,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
 <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
 <p>Here's your personalized calendar:</p>
+<p>Select a date from the dropdown menu below and press Go! to start.</p>
+<p>You can add custom events by clicking the blue date in any box below. <p>
 <?php
     include('showcalendar_withevent.php');
     ?>

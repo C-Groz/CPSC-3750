@@ -87,7 +87,6 @@ $user_id = $_SESSION['user_id'];
 </style>
 </head>
 <body>
-  <h2>Select a Month/Year Combination</h2>
   <form method="post" action="dashboard.php">
   <select name="month">
     <?php
