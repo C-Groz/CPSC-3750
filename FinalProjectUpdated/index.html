@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <style type="text/css">
+  body, html{
+    margin-top: 30px;
+  }
+  h1, p{
+    text-align: center;
+  }
+  </style>
+  <script>
+    fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+ </script>
+</head>
+<body>
+  <h1>Home</h1>
+  <p>Welcome to my interactive calendar app!</p>
+  <p>Login or create an account to get started</p>
+</body>
+</html>
