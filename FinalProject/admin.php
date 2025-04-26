@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 $mysqli = mysqli_connect("localhost", "u461793670_groz", "dykde3-fyrCyd-nyfbic", "u461793670_prog_db");
 
 // Check if user is logged as the admin (or professor wooster)
-if (!isset($_SESSION['loggedin']) || ($_SESSION['username'] !== 'admin' || $_SESSION['username'] !== 'dan@demo.com')) {
+if (!isset($_SESSION['loggedin']) || !($_SESSION['username'] == 'admin' || $_SESSION['username'] == 'dan@demo.com')) {
     header("Location: login.php");
     exit;
 }
