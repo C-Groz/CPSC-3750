@@ -106,7 +106,10 @@ $user_id = $_SESSION['user_id'];
 
 		 if (mysqli_num_rows($result) > 0) {
 			  while ($ev = mysqli_fetch_array($result)) {
-				   $event_title .= stripslashes($ev['event_title'])."<br>";
+          $event_title .= "<div style='border:1px solid #666; padding:4px; margin-top:4px; background:#eef;'>".htmlspecialchars(stripslashes($ev['event_title']))."
+          <br>
+          <a href=\"edit_event.php?id=".$ev['event_id']."\" style='font-size:small;'>Edit</a>
+          </div>";
 			  }
 		 } else {
 			  $event_title = "";
