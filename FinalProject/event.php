@@ -105,7 +105,7 @@ Complete the form below and press the submit button to add the event and refresh
   <option value="Work">Work</option>
   <option value="Personal">Personal</option>
   <option value="School">School</option>
-  <option value="General">other</option>
+  <option value="Other">other</option>
 </select></p>
 
 <fieldset>
