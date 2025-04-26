@@ -47,6 +47,9 @@ mysqli_close($mysqli);
     <meta charset="UTF-8">
     <title>Your Account</title>
     <style>
+        body, html {
+            margin-top: 30px;
+        }
         body { 
             margin: 40px; 
         }
