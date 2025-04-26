@@ -16,6 +16,10 @@
 </script>
 <?php
 session_start();
+if (isset($_POST['month']) && isset($_POST['year'])) {
+    $_SESSION['month'] = $_POST['month'];
+    $_SESSION['year'] = $_POST['year'];
+}
 
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     header("Location: login.php");

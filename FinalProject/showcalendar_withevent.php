@@ -1,11 +1,3 @@
-<script>
-    fetch("../navbar.html")
-        .then(response => response.text())
-        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
-    fetch("nav.html")
-        .then(response => response.text())
-        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
-</script>
 
 <?php
 session_start();
@@ -17,13 +9,13 @@ define("ADAY", (60*60*24));
 if (!isset($_SESSION['user_id'])) {
   die("User not logged in. Please log in.");
 }
-if ((!isset($_POST['month'])) || (!isset($_POST['year']))) {
-	$nowArray = getdate();
-	$month = $nowArray['mon'];
-	$year = $nowArray['year'];
+if (isset($_SESSION['month']) && isset($_SESSION['year'])) {
+  $month = $_SESSION['month'];
+  $year = $_SESSION['year'];
 } else {
-	$month = $_POST['month'];
-	$year = $_POST['year'];
+  $nowArray = getdate();
+  $month = $nowArray['mon'];
+  $year = $nowArray['year'];
 }
 
 $start = mktime (12, 0, 0, $month, 1, $year);
@@ -93,8 +85,8 @@ $user_id = $_SESSION['user_id'];
 </head>
 <body>
   <h1>Select a Month/Year Combination</h1>
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <select name="month">
+  <form method="post" action="dashboard.php">
+  <select name="month">
     <?php
     $months = Array("January", "February", "March", "April", "May",  "June", "July", "August", "September", "October", "November", "December");
     for ($x=1; $x <= count($months); $x++) {
