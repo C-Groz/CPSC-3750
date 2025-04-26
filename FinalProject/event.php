@@ -37,9 +37,9 @@
   
   /* Close pop-up and reload page after insertion */
   echo "<script>
-    window.opener.location.reload();
+    window.opener.location.href = 'showcalendar_withevent.php?m=$safe_m&d=$safe_d&y=$safe_y';
     window.close();
-  </script>";
+  </script>"; 
   exit;
 
 
