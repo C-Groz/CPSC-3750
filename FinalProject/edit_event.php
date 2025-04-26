@@ -99,7 +99,7 @@ mysqli_close($mysqli);
   <option value="Other" <?php if ($event['category'] == "Other") echo "selected"; ?>>Other</option>
 </select></p>
 
-<p><label for="month">Event Month:</label><br><br>
+<p><label for="month">Event Month:</label><br>
 <select name="m">
   <?php
   $months = Array("January", "February", "March", "April", "May",  "June", "July", "August", "September", "October", "November", "December");
@@ -109,7 +109,7 @@ mysqli_close($mysqli);
     echo ">" . $months[$x-1] . "</option>";
   }
   ?>
-</select><br>
+</select><br><br>
 
 <label for="day">Event Day:</label><br>
 <select name="d">
@@ -120,7 +120,7 @@ mysqli_close($mysqli);
     echo ">$x</option>";
   }
   ?>
-</select><br>
+</select><br><br>
 
 <label for="year">Event Year:</label><br>
 <select name="y">
@@ -154,9 +154,7 @@ for ($x=0; $x <= 23; $x++) {
 </fieldset>
 
 <input type="hidden" name="id" value="<?php echo $event['event_id']; ?>">
-<input type="hidden" name="m" value="<?php echo $safe_m; ?>">
-<input type="hidden" name="d" value="<?php echo $safe_d; ?>">
-<input type="hidden" name="y" value="<?php echo $safe_y; ?>">
+
 
 <button type="submit" name="submit" value="submit">Update Event</button>
 </form>
