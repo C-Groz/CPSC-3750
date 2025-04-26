@@ -91,7 +91,7 @@ $user_id = $_SESSION['user_id'];
 	    echo "<td>&nbsp;</td>\n";
 	  } else {
 		 $event_title = "";
-     $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
+     $mysqli = mysqli_connect("localhost", "u461793670_groz", "dykde3-fyrCyd-nyfbic", "u461793670_prog_db");
 		 $getEvent_sql = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date 
                              FROM calendar_events 
                              WHERE month(event_start) = ? 
