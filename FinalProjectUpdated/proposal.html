@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Proposal</title>
+  <style type="text/css">
+    body,html{
+        margin-top: 30px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        text-align: center;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    .content {
+        max-width: 800px;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    .section {
+        margin-bottom: 30px;
+        text-align: left; 
+    }
+    ul {
+        padding-left: 20px;
+        text-align: left; 
+    }
+    code {
+        background-color: #eee;
+        padding: 2px 4px;
+    }
+  </style>
+  <script>
+    fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+ </script>
+</head>
+<body>
+    <div class="container">
+      <div class="content">
+        <h1>Proposal</h1>
+        <h2>CPSC 3750 Web App Development</h2>
+  
+        <div class="section">
+          <p><strong>Author: </strong>Charlie Grozier</p>
+        </div>
+  
+        <div class="section">
+          <h3>Chosen Base App</h3>
+          <p>I selected the Simple Calendar App from the textbook. It includes features such as displaying the dates for any month between 1990 and 2020 and adding/viewing custom events.</p>
+        </div>
+  
+        <div class="section">
+          <h3>Proposed Project Overview</h3>
+          <p>My application will allow users to register for an account and login to:</p>
+          <ul>
+            <li>Add custom events to the calendar and view them ordered by time/date</li>
+            <li>Edit events</li>
+            <li>Create categories of events</li>
+            <li>Create reoccuring events</li>
+            <li>View the calendar based on years, months, or weeks</li>
+            <li>Search events</li>
+            <li>Upload files to events (eg. photos/text files)</li>
+            <li>View a user profile page which shows:</li>
+              <ul>
+                <li>User information</li>
+                <li>Upcoming events</li>
+                <li>User statistics</li>
+              </ul>
+          </ul>
+          <p>Additionally, it will contain an admin dashboard which:</p>
+          <ul>
+            <li>Shows information on all users of the system</li>
+            <li>Allows for deletion of users</li>
+          </ul>
+        </div>
+  
+        <div class="section">
+          <h3>Enhancements</h3>
+          <p>In order to acheive the proposed project above, I will enhance the following:</p>
+          <ul>
+            <li><strong>HTML:</strong> Improved layout, create additional pages(admin dashboard, user profile)</li>
+            <li><strong>CSS:</strong> Responsive design, dark mode toggle, consistent styling, enhanced UI for admin dashboard/user profiles</li>
+            <li><strong>JavaScript:</strong> Form validation, AJAX for searching and updating calendar w/o refresh, new calendar views (day, month, year)</li>
+            <li><strong>PHP:</strong> Develop functionality for editing, searching, viewing, and deleting events, add functionality for reocurring events, add functionality for admin dashboard and user profiles, update to use dates past 2020</li>
+            <li><strong>Database:</strong> Add search functionality, allow file uploads, deletion of users, queries for user stats, add column for user role</li>
+            <li><strong>Authentication:</strong> Login/Logout with password hashing, role creation (user/admin)</li>
+          </ul>
+        </div>
+  
+        <div class="section">
+          <h3>Timeline</h3>
+          <ul>
+            <li>Week 1 (due April 08 2PM): Base app implemented, proposal presented</li>
+            <li>Week 3 (due April 22 2PM): Complete enhancements, demo to instructor</li>
+            <li>Week 4 (due April 27 EOD): Polish UI and prepare for class demo</li>
+            <li>Week 5 (due Final Exam): Give a polished demo of your team's app</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>

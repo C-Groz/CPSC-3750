@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About</title>
+  <style type="text/css">
+  body, html{
+    margin-top: 30px;
+  }
+  h1{
+    text-align: center;
+  }
+  p{
+    text-align: center;
+  }
+  </style>
+  <link rel="stylesheet" href="nav.css">
+  <script>
+    fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+ </script>
+</head>
+<body>
+  
+  <h1>About</h1>
+  <p>This project was written in full by Charlie Grozier</p>
+</body>
+</html>
