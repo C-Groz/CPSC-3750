@@ -29,19 +29,45 @@
 	$safe_event_time_hh = mysqli_real_escape_string($mysqli, $_POST['event_time_hh']);
 	$safe_event_time_mm = mysqli_real_escape_string($mysqli, $_POST['event_time_mm']);
   $safe_category = mysqli_real_escape_string($mysqli, $_POST['category']);
+  $safe_recurrence = mysqli_real_escape_string($mysqli, $_POST['recurrence']);
+  $safe_recurrence_end_date = mysqli_real_escape_string($mysqli, $_POST['recurrence_end_date']);
 
 	$event_date = $safe_y."-".$safe_m."-".$safe_d." ".$safe_event_time_hh.":".$safe_event_time_mm.":00";
 
   $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id, category) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '".$user_id."', '".$safe_category."')";
 	$insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
   
+  if($safe_recurrence != 'None'){
+    $recurrence_date = strtotime($event_date); 
+    $end_date = strtotime($safe_recurrence_end_date);
+
+    // loop through to add recoccuring events
+    while ($recurrence_date < $end_date) {
+      switch ($safe_recurrence) {
+        case 'Daily':
+          $recurrence_date = strtotime("+1 day", $recurrence_date);
+          break;
+        case 'Weekly':
+          $recurrence_date = strtotime("+1 week", $recurrence_date);
+          break;
+        case 'Monthly':
+          $recurrence_date = strtotime("+1 month", $recurrence_date);
+          break;
+      }
+
+      // add recurring event into the database
+      $recurring_event_date = date("Y-m-d H:i:s", $recurrence_date);
+      $insRecurringEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id, category, recurrence, recurrence_end_date) VALUES ('".$safe_event_title."', '".$safe_event_shortdesc."', '".$recurring_event_date."', '".$user_id."', '".$safe_category."', '".$safe_recurrence."', '".$safe_recurrence_end_date."')";
+      $insRecurringEvent_res = mysqli_query($mysqli, $insRecurringEvent_sql) or die(mysqli_error($mysqli));
+    }
+
   /* Close pop-up and reload page after insertion */
   echo "<script>
     window.opener.location.href = 'showcalendar_withevent.php?m=$safe_m&d=$safe_d&y=$safe_y';
     window.close();
   </script>"; 
   exit;
-
+  }
 
   } else {
 	//create database-safe strings
@@ -107,6 +133,17 @@ Complete the form below and press the submit button to add the event and refresh
   <option value="School">School</option>
   <option value="Other">other</option>
 </select></p>
+
+<p><label for="recurrence">Recurrence:</label><br>
+<select name="recurrence">
+  <option value="None">None</option>
+  <option value="Daily">Daily</option>
+  <option value="Weekly">Weekly</option>
+  <option value="Monthly">Monthly</option>
+</select></p>
+
+<p><label for="recurrence_end_date">End Date (optional):</label><br>
+<input type="date" id="recurrence_end_date" name="recurrence_end_date"></p>
 
 <fieldset>
 <legend>Event Time (hh:mm):</legend>
