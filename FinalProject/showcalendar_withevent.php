@@ -149,7 +149,7 @@ $user_id = $_SESSION['user_id'];
           $event_box_class = "event-box " . $event_category;
           $event_title .= "<div class='$event_box_class'>"
                   . htmlspecialchars(stripslashes($ev['event_title'])) . "<br>"
-                  . "<a href=\"edit_event.php?id=" . $ev['id'] . "\" style='font-size:x-small;'>Edit</a>"
+                  . "<a href=\"edit_event.php?id=" . $ev['event_id'] . "\" style='font-size:x-small;'>Edit</a>"
                   . "</div>";
 			  }
 		 } else {
