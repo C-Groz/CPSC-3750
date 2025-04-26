@@ -1,3 +1,12 @@
+<script>
+    fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
+
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
