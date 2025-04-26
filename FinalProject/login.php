@@ -5,6 +5,33 @@
     body, html{
         margin-top: 30px;
     }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+    }
+    form {
+        max-width: 300px;
+        margin: auto;
+    }
+    label, input {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    input[type="submit"] {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background: #45a049;
+    }
+    .instructions {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 </style>
 <script>
     fetch("../navbar.html")
@@ -54,6 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 
 <form action="login.php" method="post">
+    <h2 style="text-align:center;">Log In</h2>
+    <p class="instructions">Enter your username and password below.</p>
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required>
     <label for="password">Password:</label>
