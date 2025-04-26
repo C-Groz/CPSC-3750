@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
         if(mysqli_query($mysqli, $sql)){
-            echo "User registered successfully! <a href='login.php'>Login now</a>";
+            echo "<div style='text-align:center; margin-top:20px;'>User registered successfully! <a href='login.php'>Login now</a></div>";
         }else{
             echo "Error: " . mysqli_error($mysqli);
         }
