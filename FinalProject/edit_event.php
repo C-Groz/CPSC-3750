@@ -155,7 +155,6 @@ for ($x=0; $x <= 23; $x++) {
 
 <input type="hidden" name="id" value="<?php echo $event['event_id']; ?>">
 
-
 <button type="submit" name="submit" value="submit">Update Event</button>
 </form>
 

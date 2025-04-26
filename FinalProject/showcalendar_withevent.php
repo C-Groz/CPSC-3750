@@ -27,6 +27,9 @@ $user_id = $_SESSION['user_id'];
 <head>
 <title><?php echo "Calendar: ".$firstDayArray['month']." ".$firstDayArray['year']; ?></title>
 <style type="text/css">
+  h1 {
+    font-size: 20pt;
+  }
   body {
     font-family: Arial, sans-serif;
     text-align: center;
