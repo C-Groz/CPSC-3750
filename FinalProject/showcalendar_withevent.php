@@ -27,8 +27,8 @@ $user_id = $_SESSION['user_id'];
 <head>
 <title><?php echo "Calendar: ".$firstDayArray['month']." ".$firstDayArray['year']; ?></title>
 <style type="text/css">
-  h1 {
-    font-size: 20pt;
+  h2 {
+    font-size: 16pt;
   }
   body {
     font-family: Arial, sans-serif;
@@ -87,7 +87,7 @@ $user_id = $_SESSION['user_id'];
 </style>
 </head>
 <body>
-  <h1>Select a Month/Year Combination</h1>
+  <h2>Select a Month/Year Combination</h2>
   <form method="post" action="dashboard.php">
   <select name="month">
     <?php
