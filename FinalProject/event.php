@@ -34,6 +34,11 @@
 
   $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id, category) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '".$user_id."', '".$safe_category."')";
 	$insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
+  
+  /* Reload page after insertion */
+  header("Location: ".$_SERVER['PHP_SELF']."?m=$safe_m&d=$safe_d&y=$safe_y");
+  exit;
+
 
   } else {
 	//create database-safe strings
