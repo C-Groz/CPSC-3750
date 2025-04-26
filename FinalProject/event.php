@@ -28,10 +28,11 @@
 	$safe_event_shortdesc = mysqli_real_escape_string($mysqli, $_POST['event_shortdesc']);
 	$safe_event_time_hh = mysqli_real_escape_string($mysqli, $_POST['event_time_hh']);
 	$safe_event_time_mm = mysqli_real_escape_string($mysqli, $_POST['event_time_mm']);
+  $safe_category = mysqli_real_escape_string($mysqli, $_POST['category']);
 
 	$event_date = $safe_y."-".$safe_m."-".$safe_d." ".$safe_event_time_hh.":".$safe_event_time_mm.":00";
 
-	$insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '".$user_id."')";
+  $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id, category) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '".$user_id."', '".$safe_category."')";
 	$insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
 
   } else {
@@ -43,7 +44,7 @@
 
 
   //show events for this day
-  $getEvent_sql = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date 
+  $getEvent_sql = "SELECT event_title, event_shortdesc, category, date_format(event_start, '%l:%i %p') as fmt_date 
                    FROM calendar_events 
                    WHERE month(event_start) = ? 
                    AND dayofmonth(event_start) = ? 
@@ -61,8 +62,8 @@
 		$event_title = stripslashes($ev['event_title']);
 		$event_shortdesc = stripslashes($ev['event_shortdesc']);
 		$fmt_date = $ev['fmt_date'];
-
-		$event_txt .= "<li><strong>".$fmt_date."</strong>: ".$event_title."<br>".$event_shortdesc."</li>";
+    $category = $ev['category'];
+    $event_txt .= "<li><strong>".$fmt_date."</strong>: ".$event_title." (<em>".$category."</em>)<br>".$event_shortdesc."</li>";
 	}
 	$event_txt .= "</ul>";
 	mysqli_free_result($getEvent_res);
@@ -90,6 +91,14 @@ Complete the form below and press the submit button to add the event and refresh
 
 <p><label for="event_shortdesc">Event Description:</label><br>
 <input type="text" id="event_shortdesc" name="event_shortdesc" size="25" maxlength="255"></p>
+
+<p><label for="category">Event Category:</label><br>
+<select id="category" name="category">
+  <option value="Work">Work</option>
+  <option value="Personal">Personal</option>
+  <option value="School">School</option>
+  <option value="General">other</option>
+</select></p>
 
 <fieldset>
 <legend>Event Time (hh:mm):</legend>

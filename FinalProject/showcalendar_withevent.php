@@ -25,22 +25,60 @@ $user_id = $_SESSION['user_id'];
 <head>
 <title><?php echo "Calendar: ".$firstDayArray['month']." ".$firstDayArray['year']; ?></title>
 <style type="text/css">
-    table {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th {
-        border: 1px solid black;
-        padding: 6px;
-        font-weight: bold;
-        background: #ccc;
-    }
-    td {
-        border: 1px solid black;
-        padding: 6px;
-        vertical-align: top;
-        width: 100px;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  table {
+    border: 2px solid #333;
+    border-collapse: collapse;
+    margin: 20px auto; 
+    width: 90%; 
+    max-width: 1200px;
+    background: #f9f9f9;
+  }
+  th {
+    border: 1px solid #333;
+    padding: 12px;
+    font-weight: bold;
+    background: #666;
+    color: #fff;
+  }
+  td {
+    border: 1px solid #999;
+    padding: 12px;
+    vertical-align: top;
+    height: 120px;
+    width: 14.28%;
+    background: #fff;
+    position: relative;
+  }
+  .event-box {
+    border: 1px solid #666;
+    padding: 4px;
+    margin-top: 6px;
+    border-radius: 6px;
+    font-size: small;
+    text-align: left;
+  }
+
+  /* Category Colors - work, personal, school, other */
+  .event-box.work {
+    background-color:rgb(136, 184, 234); 
+  }
+  .event-box.personal {
+    background-color:rgb(224, 95, 140); 
+  }
+  .event-box.school {
+    background-color:rgb(203, 148, 21); 
+  }
+  .event-box.other {
+    background-color:rgb(111, 255, 116); 
+  }
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
 </style>
 </head>
 <body>
@@ -92,7 +130,7 @@ $user_id = $_SESSION['user_id'];
 	  } else {
 		 $event_title = "";
      $mysqli = mysqli_connect("localhost", "u461793670_groz", "dykde3-fyrCyd-nyfbic", "u461793670_prog_db");
-		 $getEvent_sql = "SELECT id, event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date 
+		 $getEvent_sql = "SELECT id, event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date, category
                              FROM calendar_events 
                              WHERE month(event_start) = ? 
                              AND dayofmonth(event_start) = ? 
@@ -106,10 +144,12 @@ $user_id = $_SESSION['user_id'];
 
 		 if (mysqli_num_rows($result) > 0) {
 			  while ($ev = mysqli_fetch_array($result)) {
-          $event_title .= "<div style='border:1px solid #666; padding:4px; margin-top:4px; background:#eef;'>".htmlspecialchars(stripslashes($ev['event_title']))."
-          <br>
-          <a href=\"edit_event.php?id=".$ev['id']."\" style='font-size:small;'>Edit</a>
-          </div>";
+          $event_category = strtolower($ev['category']);
+          $event_box_class = "event-box " . $event_category;
+          $event_title .= "<div class='$event_box_class'>"
+                  . htmlspecialchars(stripslashes($ev['event_title'])) . "<br>"
+                  . "<a href=\"edit_event.php?id=" . $ev['id'] . "\" style='font-size:x-small;'>Edit</a>"
+                  . "</div>";
 			  }
 		 } else {
 			  $event_title = "";
