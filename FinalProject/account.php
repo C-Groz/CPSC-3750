@@ -51,8 +51,12 @@ mysqli_close($mysqli);
         h1, h2 { 
             text-align: center; 
         }
+        p {
+            text-align: center;
+        }
         .section { 
             margin-bottom: 40px; 
+            text-align: center;
         }
         ul { 
             list-style-type: none; 
@@ -60,6 +64,7 @@ mysqli_close($mysqli);
             padding: 0; 
         }
         li { 
+            list-style-type: none; 
             text-align: center;
             margin: 10px 0; 
         }
