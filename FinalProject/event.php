@@ -14,7 +14,7 @@
 	exit;
   }
 
-  $mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
+  $mysqli = mysqli_connect("localhost", "u461793670_groz", "dykde3-fyrCyd-nyfbic", "u461793670_prog_db");
 
   $user_id = $_SESSION['user_id'];
 

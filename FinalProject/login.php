@@ -21,7 +21,7 @@ ini_set('display_errors', 1);
 
 session_start();
 
-$mysqli = mysqli_connect("localhost", "u461793670_groz", "DatabasePW123|", "u461793670_prog_db");
+$mysqli = mysqli_connect("localhost", "u461793670_groz", "dykde3-fyrCyd-nyfbic", "u461793670_prog_db");
 
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
     header("Location: dashboard.php");
