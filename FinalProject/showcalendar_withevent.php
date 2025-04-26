@@ -92,7 +92,7 @@ $user_id = $_SESSION['user_id'];
 	  } else {
 		 $event_title = "";
      $mysqli = mysqli_connect("localhost", "u461793670_groz", "dykde3-fyrCyd-nyfbic", "u461793670_prog_db");
-		 $getEvent_sql = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date 
+		 $getEvent_sql = "SELECT id, event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date 
                              FROM calendar_events 
                              WHERE month(event_start) = ? 
                              AND dayofmonth(event_start) = ? 
@@ -108,7 +108,7 @@ $user_id = $_SESSION['user_id'];
 			  while ($ev = mysqli_fetch_array($result)) {
           $event_title .= "<div style='border:1px solid #666; padding:4px; margin-top:4px; background:#eef;'>".htmlspecialchars(stripslashes($ev['event_title']))."
           <br>
-          <a href=\"edit_event.php?id=".$ev['event_id']."\" style='font-size:small;'>Edit</a>
+          <a href=\"edit_event.php?id=".$ev['id']."\" style='font-size:small;'>Edit</a>
           </div>";
 			  }
 		 } else {
