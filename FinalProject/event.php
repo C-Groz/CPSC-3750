@@ -32,9 +32,25 @@
   $safe_recurrence = mysqli_real_escape_string($mysqli, $_POST['recurrence']);
   $safe_recurrence_end_date = mysqli_real_escape_string($mysqli, $_POST['recurrence_end_date']);
 
+  $image_filename = NULL; 
+
+  if (isset($_FILES['event_image']) && $_FILES['event_image']['error'] == 0) {
+    $allowed_types = array('image/jpeg', 'image/png', 'image/gif');
+    
+    if (in_array($_FILES['event_image']['type'], $allowed_types)) {
+      $upload_dir = 'uploads/';
+      if (!file_exists($upload_dir)) {
+        mkdir($upload_dir, 0777, true);
+      }
+      $image_filename = basename($_FILES['event_image']['name']);
+      $target_path = $upload_dir . $image_filename;
+      move_uploaded_file($_FILES['event_image']['tmp_name'], $target_path);
+    }
+  }
+
 	$event_date = $safe_y."-".$safe_m."-".$safe_d." ".$safe_event_time_hh.":".$safe_event_time_mm.":00";
 
-  $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id, category) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '".$user_id."', '".$safe_category."')";
+  $insEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id, category, event_image) VALUES('".$safe_event_title."', '".$safe_event_shortdesc."', '".$event_date."', '".$user_id."', '".$safe_category."', '".$image_filename."')";
 	$insEvent_res = mysqli_query($mysqli, $insEvent_sql) or die(mysqli_error($mysqli));
   
   if($safe_recurrence != 'None'){
@@ -57,7 +73,7 @@
 
       // add recurring event into the database
       $recurring_event_date = date("Y-m-d H:i:s", $recurrence_date);
-      $insRecurringEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id, category, recurrence, recurrence_end_date) VALUES ('".$safe_event_title."', '".$safe_event_shortdesc."', '".$recurring_event_date."', '".$user_id."', '".$safe_category."', '".$safe_recurrence."', '".$safe_recurrence_end_date."')";
+      $insRecurringEvent_sql = "INSERT INTO calendar_events (event_title, event_shortdesc, event_start, id, category, recurrence, recurrence_end_date, event_image) VALUES ('".$safe_event_title."', '".$safe_event_shortdesc."', '".$recurring_event_date."', '".$user_id."', '".$safe_category."', '".$safe_recurrence."', '".$safe_recurrence_end_date."', '".$image_filename."')";
       $insRecurringEvent_res = mysqli_query($mysqli, $insRecurringEvent_sql) or die(mysqli_error($mysqli));
     }
 
@@ -116,7 +132,7 @@
 
   // show form for adding an event
   echo <<<END_OF_TEXT
-<form method="post" action="$_SERVER[PHP_SELF]">
+<form method="post" action="$_SERVER[PHP_SELF]" enctype="multipart/form-data">
 <p><strong>Would you like to add an event?</strong><br>
 Complete the form below and press the submit button to add the event and refresh this window.</p>
 
@@ -166,6 +182,9 @@ END_OF_TEXT;
 <input type="hidden" name="m" value="$safe_m">
 <input type="hidden" name="d" value="$safe_d">
 <input type="hidden" name="y" value="$safe_y">
+
+<p><label for="event_image">Upload Image:</label><br>
+<input type="file" id="event_image" name="event_image" accept="image/*">
   
 <button type="submit" name="submit" value="submit">Add Event</button>
 </form>
