@@ -100,7 +100,7 @@ $user_id = $_SESSION['user_id'];
     </select>
     <select name="year">
     <?php
-    for ($x=1990; $x<=2020; $x++) {
+    for ($x=1990; $x<=2030; $x++) {
     	echo "<option";
     	if ($x == $year) {
     		echo " selected";
