@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Features</title>
+  <style type="text/css">
+    body,html{
+        margin-top: 30px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        text-align: center;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    .content {
+        max-width: 800px;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    .section {
+        margin-bottom: 30px;
+        text-align: left; 
+    }
+    ul {
+        padding-left: 20px;
+        text-align: left; 
+    }
+    code {
+        background-color: #eee;
+        padding: 2px 4px;
+    }
+  </style>
+  <script>
+    fetch("../navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+ </script>
+</head>
+<body>
+    <div class="container">
+      <div class="content">
+        <h1>Features</h1>
+        <h2>CPSC 3750 Web App Development</h2>
+  
+        <div class="section">
+          <p><strong>Author: </strong>Charlie Grozier</p>
+        </div>
+  
+        <div class="section">
+            <h3>Front-End Changes:</h3>
+            <ul>
+            <li>Added colors to events to show category (✅ Working)</li>
+            <li>Improved readability of calendar (✅ Working)</li>
+            <li>Options to edit/view events on calendar (✅ Working)</li>
+            <li>Options to add categories, images, and reoccurance to events (✅ Working)</li>
+            <li>Improved CSS on login/register screens (✅ Working)</li>
+            <li>Added new tab for admin dashboard (✅ Working)</li>
+            <li>Added new tab for account dashboard (✅ Working)</li>
+            <li>Search by event (❌ Not Implemented)</li>
+            <li>View the calendar based on years, months, or weeks (❌ Not Implemented)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Front-End Changes:</h3>
+            <ul>
+                <li>Added db field and php for category functionality (✅ Working)</li>
+                <li>Added db field and php for reoccuring events (✅ Working)</li>
+                <li>Added db field for account creation timestamp (✅ Working)</li>
+                <li>Added db field for event image filename (✅ Working)</li>
+                <li>Added functionality to upload images for events(✅ Working)</li>
+                <li>Added functionality to edit events (✅ Working)</li>
+                <li>Added functionality to view events/images (✅ Working)</li>
+                <li>Added functionality enter admin dashboard and delete users (✅ Working)</li>
+                <li>Added functionality enter account dashboard to view statistics/upcoming events (✅ Working)</li>
+                <li>Added functionality to make default calendar the current date (✅ Working)</li>
+                <li>Edited calendar to work with dates up until 2030 (✅ Working)</li>
+                <li>Search by events (❌ Not Implemented)</li>
+                <li>View the calendar based on years, months, or weeks (❌ Not Implemented)</li>
+
+            </ul>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  </html>
