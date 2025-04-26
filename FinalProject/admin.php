@@ -37,6 +37,9 @@ $result = mysqli_query($mysqli, "SELECT id, username, created_at FROM users ORDE
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
     <style>
+        body, html {
+            margin-top: 30px;
+        }
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -59,6 +62,14 @@ $result = mysqli_query($mysqli, "SELECT id, username, created_at FROM users ORDE
         }
     </style>
 </head>
+<script>
+    fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+    fetch("nav.html")
+        .then(response => response.text())
+        .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
 <body>
 
 <h1>Admin Dashboard</h1>
