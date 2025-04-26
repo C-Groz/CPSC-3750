@@ -149,7 +149,7 @@ $user_id = $_SESSION['user_id'];
           $event_box_class = "event-box " . $event_category;
           $event_title .= "<div class='$event_box_class'>"
                   . htmlspecialchars(stripslashes($ev['event_title'])) . "<br>"
-                  . "<a href=\"edit_event.php?id=" . $ev['event_id'] . "\" style='font-size:x-small;'>Edit</a>"
+                  . "<a href=\"javascript:editWindow('edit_event.php?id=" . $ev['event_id'] . "')\" style='font-size:x-small;'>Edit</a>"
                   . "</div>";
 			  }
 		 } else {
@@ -175,6 +175,10 @@ $user_id = $_SESSION['user_id'];
   function eventWindow(url) {
       event_popupWin = window.open(url, 'event', 'resizable=yes, scrollbars=yes, toolbar=no,width=400,height=400');
      event_popupWin.opener = self;
+  }
+  function editWindow(url) {
+    edit_popupWin = window.open(url, 'edit', 'resizable=yes, scrollbars=yes, toolbar=no, width=500, height=500');
+    edit_popupWin.opener = self;
   }
   </script>
 
