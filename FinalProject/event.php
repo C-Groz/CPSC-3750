@@ -184,7 +184,7 @@ END_OF_TEXT;
 <input type="hidden" name="y" value="$safe_y">
 
 <p><label for="event_image">Upload Image:</label><br>
-<input type="file" id="event_image" name="event_image" accept="image/*">
+<input type="file" id="event_image" name="event_image" accept="image/*"><br>
   
 <button type="submit" name="submit" value="submit">Add Event</button>
 </form>
