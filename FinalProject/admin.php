@@ -97,6 +97,6 @@ $result = mysqli_query($mysqli, "SELECT id, username, created_at FROM users ORDE
     </tr>
     <?php endwhile; ?>
 </table>
-
+<a href="logout.php">Log Out</a>
 </body>
 </html>

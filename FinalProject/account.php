@@ -117,6 +117,6 @@ mysqli_close($mysqli);
         <h2>Your Statistics</h2>
         <p><strong>Total Events:</strong> <?php echo $count_row['total_events']; ?></p>
     </div>
-
+    <a href="logout.php">Log Out</a>
 </body>
 </html>
