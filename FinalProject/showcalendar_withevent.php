@@ -136,7 +136,7 @@ $user_id = $_SESSION['user_id'];
                              WHERE month(event_start) = ? 
                              AND dayofmonth(event_start) = ? 
                              AND year(event_start) = ? 
-                             AND id = ? 
+                             AND user_id = ? 
                              ORDER BY event_start";
      $stmt = mysqli_prepare($mysqli, $getEvent_sql);
      mysqli_stmt_bind_param($stmt, 'iiii', $month, $dayArray['mday'], $year, $user_id);
