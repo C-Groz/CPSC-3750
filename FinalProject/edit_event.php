@@ -99,6 +99,41 @@ mysqli_close($mysqli);
   <option value="Other" <?php if ($event['category'] == "Other") echo "selected"; ?>>Other</option>
 </select></p>
 
+<p><label for="month">Event Month:</label><br>
+<select name="m">
+  <?php
+  $months = Array("January", "February", "March", "April", "May",  "June", "July", "August", "September", "October", "November", "December");
+  for ($x=1; $x <= count($months); $x++) {
+    echo "<option value=\"$x\"";
+    if ($x == $safe_m) echo " selected";
+    echo ">" . $months[$x-1] . "</option>";
+  }
+  ?>
+</select>
+
+<label for="day">Event Day:</label><br>
+<select name="d">
+  <?php
+  for ($x = 1; $x <= 31; $x++) {
+    echo "<option value=\"$x\"";
+    if ($x == $safe_d) echo " selected";
+    echo ">$x</option>";
+  }
+  ?>
+</select>
+
+<label for="year">Event Year:</label><br>
+<select name="y">
+  <?php
+  for ($x = 1990; $x <= 2030; $x++) {
+    echo "<option value=\"$x\"";
+    if ($x == $safe_y) echo " selected";
+    echo ">$x</option>";
+  }
+  ?>
+</select>
+</p>
+
 <fieldset>
 <legend>Event Time (hh:mm):</legend>
 <select name="event_time_hh">
