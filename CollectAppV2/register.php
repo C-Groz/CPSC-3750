@@ -24,7 +24,7 @@ ini_set('display_errors', 1);
 session_start();
 
 // Connect db
-$mysqli = mysqli_connect("localhost", "u461793670_cg", "jipdyr-kitwyv-0hujKi", "u461793670_collect");
+$mysqli = mysqli_connect("localhost", "u461793670_cg", "dykde3-fyrCyd-nyfbic", "u461793670_collect");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = mysqli_real_escape_string($mysqli, $_POST['username']);
