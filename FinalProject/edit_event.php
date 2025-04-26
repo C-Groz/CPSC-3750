@@ -99,7 +99,7 @@ mysqli_close($mysqli);
   <option value="Other" <?php if ($event['category'] == "Other") echo "selected"; ?>>Other</option>
 </select></p>
 
-<p><label for="month">Event Month:</label><br>
+<p><label for="month">Event Month:</label><br><br>
 <select name="m">
   <?php
   $months = Array("January", "February", "March", "April", "May",  "June", "July", "August", "September", "October", "November", "December");
@@ -109,7 +109,7 @@ mysqli_close($mysqli);
     echo ">" . $months[$x-1] . "</option>";
   }
   ?>
-</select>
+</select><br>
 
 <label for="day">Event Day:</label><br>
 <select name="d">
@@ -120,7 +120,7 @@ mysqli_close($mysqli);
     echo ">$x</option>";
   }
   ?>
-</select>
+</select><br>
 
 <label for="year">Event Year:</label><br>
 <select name="y">
