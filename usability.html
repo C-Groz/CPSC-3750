@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usability Test Results - Audio Changer App</title>
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+  </script>
+  <style>
+    body, html {
+      margin-top: 20px;
+    }
+    body {
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #ffffff;
+    }
+    .screenshot {
+      margin: 10px 0;
+    }
+    ul, li {
+      list-style-type: none; 
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Usability Test Results - Audio Changer App</h1>
+
+  <p>Link to app before changes: <a href="../AudioChanger/audioChanger.html">Audio Changer V1</a></p>
+  <p>Link to app after changes: <a href="../AudioChangerNew/audioChanger.html">Audio Changer V2</a></p>
+  <img src="IMG_0239.jpg" alt="Tester" width="50%" height="50%">
+
+
+  <h2>Test Summary</h2>
+  <p><strong>Tester:</strong> My roommate, Will Rosia who is a tech-savvy Clemson student with little programming experience who loves music</p>
+  <p><strong>Location:</strong> Our kitchen area, on my laptop (Chrome browser)</p>
+  <p><strong>Date:</strong> April 26, 2025</p>
+  
+  <h2>Test Tasks and User Performance</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>User Performance</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Play and pause the song</td>
+        <td>Completed the task in 5 seconds</td>
+        <td>Will stated that this task was very easy because he is used to completing this task in other music software</td>
+      </tr>
+      <tr>
+        <td>Create a title named "Task" after the 2-minute mark in the song </td>
+        <td>Completed the task in 30 seconds</td>
+        <td>Will took a moment to figure out how to navigate through the song. Had minor difficulty figuring out how to add a title </td>
+      </tr>
+      <tr>
+        <td>Delete the "Task" title</td>
+        <td>Will completed this task in 15 seconds</td>
+        <td>Will took time for will to figure out that he has to click on the title first to delete it</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Pain Points and Confusions</h2>
+  <ul>
+    <li>- Confused what the word title meant</li>
+    <li>- Difficulty figuring out how to delete title</li>
+    <li>- Difficult to read button names due to small font/coloring</li>
+  </ul>
+
+  <h2>Actionable Improvements</h2>
+  <ul>
+    <li>- Created detailed instructions for how to use the app and changed the word title to timestamp</li>
+    <li>- Created a delete button on each timestamp for easy deletion</li>
+    <li>- Increased font size and changed color scheme</li>
+  </ul>
+
+  <h2>Before and After Screenshots/Videos</h2>
+
+  <h3>Before Changes</h3>
+  <div class="screenshot">
+    <img src="before.png" alt="Before Screenshot" width="50%" height="50%">
+  </div>
+
+  <h3>After Changes</h3>
+  <div class="screenshot">
+    <img src="after1.png" alt="After Screenshot 1" width="50%" height="50%">
+    <img src="after2.png" alt="After Screenshot 2" width="50%" height="50%">
+
+  </div>
+
+</body>
+</html>

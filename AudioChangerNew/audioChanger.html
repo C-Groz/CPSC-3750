@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Changer</title>
+</head>
+<script>
+  fetch("../navbar.html")
+    .then(response => response.text())
+    .then(data => document.body.insertAdjacentHTML("afterbegin", data));
+</script>
+<style>
+    html, body{
+        margin-top: 30px;
+    }
+    img{
+        height: 200px;
+        width: 200px
+    }
+    #container{
+        text-align: center;
+    }
+    #play{
+        background-color: rgb(79, 198, 103);
+    }
+    #rewind, #forward{
+        background-color: rgb(226, 189, 232);
+    }
+    #add-title{
+        background-color: rgb(162, 181, 247);
+    }
+    #song-controls-container button{
+        margin-left: 10px;
+        margin-bottom: 10px;
+        width: 110px;
+        height: 30px;
+        font-size: 12pt;
+    }
+    #title-controls-container button{
+        margin-left: 10px;
+        width: 150px;
+        height: 30px;
+        font-size: 12pt;
+    }
+    #title-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #titles-title{
+        font-size: 18pt;
+    }
+    .title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        height: 40px;
+        margin-top: 5px;
+        background-color: rgb(162, 181, 247);
+    }
+    #instructions-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    #toggle-instructions {
+        background-color: rgb(162, 181, 247); 
+        padding: 10px 15px;
+        font-size: 12pt;
+        width: 200px;
+        border-radius: 5px;
+    }
+    #toggle-instructions:hover {
+        background-color: rgb(135, 150, 205); 
+    }
+    #instructions {
+        display: none;
+        margin-top: 10px;
+    }
+
+    #instructions ul {
+        list-style-type: none; 
+    }
+
+    #instructions ul li {
+        margin-bottom: 8px;
+    }
+</style>
+<body>
+    <div id="container">
+        <h1>Project 1: Audio Changer</h1>
+        <div id="instructions-container">
+            <button id="toggle-instructions">Show Instructions</button>
+            <div id="instructions" style="display: none; margin-top: 10px;">
+                <h3>Instructions:</h3>
+                <ul>
+                    <li><strong>Play</strong> the song and use the controls to navigate through it.</li>
+                    <li><strong>Rewind 5s</strong> or <strong>Forward 5s</strong> to move to different parts of the song.</li>
+                    <li><strong>Add Time Stamp</strong> to add timestamps save your favorite moments in the song.</li>
+                    <li>Click on a timestamp to jump to that part of the song.</li>
+                    <li>Click on the delete icon next to a timestamp to remove it.</li>
+                </ul>
+            </div>
+        </div>
+        <img src="album.jpg">
+        <p><strong>File: </strong>civilwar.ogg</p>
+        <p><strong>Song Name: </strong>Civil War - Guns N' Roses</p>
+        <p><strong>Current Title: </strong><label id="current-title">none</p>
+        <div id="song-controls-container">
+            <button id="rewind"><strong>Rewind 5s</strong></button>
+            <button id="play"><strong>Play</strong></button>
+            <button id="forward"><strong>Forward 5s</strong></button>
+        </div>
+        <div id="title-controls-container">
+            <button id="add-title"><strong>Add Time Stamp</strong></button>
+            <!--<button id="delete-title">Delete Title</button>-->
+        </div>
+        <p id="current-song-time">00:00</p>
+        <p id="titles-title"><strong>Time Stamps:</strong></p>
+        <div id="title-container">
+            <!--<button class="title" data-time=".01">Begining</button>
+            <button class="title" data-time="12">First Note</button>
+            <button class="title" data-time="80">Beat Drop</button>
+            <button class="title" data-time="205">Guitar Solo</button>
+            <button class="title" data-time="232">Middle</button>
+            <button class="title" data-time="464">End</button> -->
+        </div>
+    </div>
+    
+
+    <audio id="song"><source src="civilwar.ogg" type="audio/ogg"></audio>
+    <script src="audioChanger.js"></script>
+</body>
+</html>
