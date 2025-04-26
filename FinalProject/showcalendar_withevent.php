@@ -131,12 +131,12 @@ $user_id = $_SESSION['user_id'];
 	  } else {
 		 $event_title = "";
      $mysqli = mysqli_connect("localhost", "u461793670_groz", "dykde3-fyrCyd-nyfbic", "u461793670_prog_db");
-		 $getEvent_sql = "SELECT id, event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date, category
+		 $getEvent_sql = "SELECT event_id, event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date, category
                              FROM calendar_events 
                              WHERE month(event_start) = ? 
                              AND dayofmonth(event_start) = ? 
                              AND year(event_start) = ? 
-                             AND user_id = ? 
+                             AND id = ? 
                              ORDER BY event_start";
      $stmt = mysqli_prepare($mysqli, $getEvent_sql);
      mysqli_stmt_bind_param($stmt, 'iiii', $month, $dayArray['mday'], $year, $user_id);
