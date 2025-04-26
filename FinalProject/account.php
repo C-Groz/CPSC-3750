@@ -45,12 +45,27 @@ mysqli_close($mysqli);
     <meta charset="UTF-8">
     <title>Your Account</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        h1, h2 { text-align: center; }
-        .section { margin-bottom: 40px; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin: 10px 0; }
-        .stats { text-align: center; font-size: 18px; }
+        body { 
+            margin: 40px; 
+        }
+        h1, h2 { 
+            text-align: center; 
+        }
+        .section { 
+            margin-bottom: 40px; 
+        }
+        ul { 
+            text-align: center;
+            padding: 0; 
+        }
+        li { 
+            text-align: center;
+            margin: 10px 0; 
+        }
+        .stats { 
+            text-align: center; 
+            font-size: 18px; 
+        }
     </style>
 </head>
 <body>
