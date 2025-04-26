@@ -48,7 +48,7 @@ if ($_POST) {
     mysqli_query($mysqli, $update_sql) or die(mysqli_error($mysqli));
   
     echo "<script>
-        window.opener.location.href = 'showcalendar_withevent.php?m=$safe_m&d=$safe_d&y=$safe_y';
+        window.opener.location.href = 'dashboard.php?m=$safe_m&d=$safe_d&y=$safe_y';
         window.close();
     </script>";
     exit;
